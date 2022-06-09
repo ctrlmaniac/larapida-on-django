@@ -1,0 +1,15 @@
+.venv
+__pycache__
+
+public
+!clients/**/public
+!lab/**/public
+
+/node_modules
+
+*.log
+
+fixtures
+!webapp/**/fixtures
+
+.larapidaenv

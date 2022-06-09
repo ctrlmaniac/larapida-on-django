@@ -1,0 +1,9 @@
+{
+  "name": "larapida-on-django",
+  "dependencies": {
+    "npm": "^8.12.1"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.1"
+  }
+}
