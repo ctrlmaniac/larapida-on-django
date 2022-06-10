@@ -4,7 +4,7 @@ from .categoria import Categoria
 
 class CategoriaSecondaria(models.Model):
     categoria = models.ForeignKey(
-        Categoria, on_delete=models.CASCADE, related_name="categoria_secondaria"
+        Categoria, on_delete=models.CASCADE, related_name="categorie_secondarie"
     )
 
     nome = models.CharField(max_length=200)
