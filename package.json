@@ -1,5 +1,10 @@
 {
   "name": "larapida-on-django",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "clients/*"
+  ],
   "dependencies": {
     "npm": "^8.12.1"
   },
