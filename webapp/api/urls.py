@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 
 # Magazzino
 router.register(r"magazzino/categorie", magazzino.CategoriaViewSet)
+router.register(r"magazzino/prodotti", magazzino.ProdottoViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
