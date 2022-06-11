@@ -13,3 +13,5 @@ fixtures
 !webapp/**/fixtures
 
 .larapidaenv
+
+*.sqlite3
