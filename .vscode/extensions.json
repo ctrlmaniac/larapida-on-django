@@ -2,6 +2,7 @@
     "recommendations": [
         "ms-python.python",
         "bungcip.better-toml",
-        "ms-vscode-remote.remote-wsl"
+        "ms-vscode-remote.remote-wsl",
+        "esbenp.prettier-vscode"
     ]
 }
