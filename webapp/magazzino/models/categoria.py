@@ -1,4 +1,5 @@
 from django.db import models
+from ..helpers import wallpapers_dir
 
 
 class Categoria(models.Model):
@@ -11,6 +12,12 @@ class Categoria(models.Model):
 
     descrizione_breve = models.TextField(max_length=500, blank=False)
     descrizione = models.TextField(blank=True, default=None)
+
+    wallpaper = models.ImageField(
+        blank=True,
+        default=None,
+        upload_to=wallpapers_dir,
+    )
 
     def __str__(self):
         return self.nome
