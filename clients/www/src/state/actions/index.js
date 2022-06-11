@@ -1,0 +1,1 @@
+export { magazzino } from "./magazzino";

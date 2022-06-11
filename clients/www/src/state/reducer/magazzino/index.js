@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import magazzino from "./magazzino";
+import categorie from "./categorie";
 
 export default combineReducers({
-  magazzino: magazzino,
+  categorie: categorie,
 });
