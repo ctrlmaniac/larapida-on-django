@@ -3,6 +3,7 @@
         "ms-python.python",
         "bungcip.better-toml",
         "ms-vscode-remote.remote-wsl",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig"
     ]
 }
