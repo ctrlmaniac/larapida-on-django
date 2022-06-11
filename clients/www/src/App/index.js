@@ -1,9 +1,11 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home";
 
 export default function App() {
   return (
-    <React.Fragment>
-      <p>Hello</p>
-    </React.Fragment>
+    <Routes>
+      <Route index path="/" element={<Home />} />
+    </Routes>
   );
 }
