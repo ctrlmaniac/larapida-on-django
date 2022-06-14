@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { action } from "state";
 import Home from "./Home";
 import NotFound from "./NotFound";
+import Servizio from "./Servizio";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ export default function App() {
     <Routes>
       <Route index path="/" element={<Home />} />
 
-      <Route path="*" element={<NotFound />} />
+      <Route path="/:servizio" element={<Servizio />} />
     </Routes>
   );
 }
