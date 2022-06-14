@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { action } from "state";
 import Home from "./Home";
+import NotFound from "./NotFound";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -14,6 +15,8 @@ export default function App() {
   return (
     <Routes>
       <Route index path="/" element={<Home />} />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
