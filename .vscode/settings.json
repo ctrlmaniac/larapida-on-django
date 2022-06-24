@@ -4,5 +4,6 @@
     "python.formatting.provider": "black",
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "cornflakes.linter.executablePath": ".venv/bin/flake8"
 }

@@ -1,3 +1,4 @@
+"""This file will move all clients file into the django app."""
 import json
 import os
 from pathlib import Path
@@ -20,10 +21,10 @@ for CLIENT in os.listdir(CLIENTS_DIR):
     ASSET_MANIFEST = BUILD_DIR / "asset-manifest.json"
 
     def index():
+        """Copy index.html into the template folder."""
         if os.path.exists(TEMPLATES_DIR):
             if os.path.exists(INDEX_OLD):
-                # Elimina il vecchio index.html
-                os.remove(INDEX_OLD)
+                os.remove(INDEX_OLD)  # Removes old index.html
         else:
             os.makedirs(TEMPLATES_DIR)
 
@@ -32,9 +33,9 @@ for CLIENT in os.listdir(CLIENTS_DIR):
         print("")
 
     def asset_manifest():
+        """Edit asset-manifest.json."""
         print("- modifica di asset-manifest.json")
 
-        # Modifica asset-manifest.json
         with open(ASSET_MANIFEST, "r+") as f:
             data = json.load(f)
 
@@ -47,6 +48,7 @@ for CLIENT in os.listdir(CLIENTS_DIR):
         print("")
 
     def collectstatics():
+        """Collect other static files."""
         print("- copia dei file")
 
         # Eliminazione dei vecchi file
@@ -60,6 +62,7 @@ for CLIENT in os.listdir(CLIENTS_DIR):
         print("")
 
     def run():
+        """run the script."""
         # Controlla che la cartella "build" esista
         if not os.path.isdir(BUILD_DIR):
             messaggio = """
