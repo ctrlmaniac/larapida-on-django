@@ -28,7 +28,7 @@ class Prodotto(PolymorphicModel):
     sito = models.BooleanField(default=True, help_text="mostra sul sito")
     shop = models.BooleanField(default=True, help_text="mostra sullo shop")
 
-    nome = models.CharField(max_length=200, blank=True, null=True)
+    nome = models.CharField(max_length=200, blank=False, null=False)
 
     descrizione_breve = models.TextField(
         max_length=500, blank=True, null=True, default=None
@@ -36,6 +36,24 @@ class Prodotto(PolymorphicModel):
     descrizione = models.TextField(blank=True, null=True, default=None)
 
     url = models.CharField(max_length=500, blank=True, null=True, default=None)
+
+    prezzo = models.DecimalField(
+        max_digits=19,
+        decimal_places=2,
+        blank=True,
+        default=None,
+        null=True,
+    )
+
+    prezzo_offerta = models.DecimalField(
+        max_digits=19,
+        decimal_places=2,
+        blank=True,
+        default=None,
+        null=True,
+    )
+
+    prezzo_a_partire = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if self.url is None:
