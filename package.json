@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "collectclients": "python collectclients.py",
-    "build:clients": "npx lerna exec --concurrency 1 -- yarn build"
+    "build:clients": "npx lerna exec --concurrency 1 -- yarn build",
+    "runserver": "python webapp/manage.py runserver"
   },
   "dependencies": {
     "npm": "^8.12.1"
