@@ -2,7 +2,13 @@ import React from "react";
 import { isEmpty, find } from "lodash";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { ErrorScreen, Header, LoadingScreen, Jumbotron } from "Components";
+import {
+  ErrorScreen,
+  Header,
+  LoadingScreen,
+  Jumbotron,
+  Page,
+} from "Components";
 import { Typography } from "@mui/material";
 import NotFound from "App/NotFound";
 import { useDispatch } from "react-redux";
@@ -28,7 +34,7 @@ export default function Servizio() {
         })
       );
     }
-  }, [servizio, categorie, dispatch]);
+  }, [categorie, dispatch]);
 
   if (categorie.getting && lista.getting) {
     return <LoadingScreen />;
@@ -54,7 +60,7 @@ export default function Servizio() {
             return <NotFound />;
           } else {
             return (
-              <React.Fragment>
+              <Page>
                 <Header>
                   <Typography variant="h2" component="h1" gutterBottom>
                     {categoria.nome}
@@ -84,7 +90,7 @@ export default function Servizio() {
                     message="Cosa vendiamo"
                   />
                 )}
-              </React.Fragment>
+              </Page>
             );
           }
         }
