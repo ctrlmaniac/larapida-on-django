@@ -2,6 +2,7 @@ import { Button, Typography } from "@mui/material";
 import { Container, Box } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Page } from "Components";
 
 export default function NotFound() {
   const navigate = useNavigate();
