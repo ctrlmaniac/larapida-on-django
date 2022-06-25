@@ -7,7 +7,6 @@ import { Typography } from "@mui/material";
 import NotFound from "App/NotFound";
 import { useDispatch } from "react-redux";
 import { action } from "state";
-import Servizi from "./Servizi";
 import Prodotti from "./Prodotti";
 
 export default function Servizio() {
@@ -70,8 +69,21 @@ export default function Servizio() {
                   <Jumbotron image={categoria.wallpaper} />
                 )}
 
-                {!isEmpty(lista.list) && <Servizi lista={lista} />}
-                {!isEmpty(lista.list) && <Prodotti lista={lista} />}
+                {!isEmpty(lista.list) && (
+                  <Prodotti
+                    lista={lista}
+                    servizio={true}
+                    message="Cosa facciamo"
+                  />
+                )}
+
+                {!isEmpty(lista.list) && (
+                  <Prodotti
+                    lista={lista}
+                    servizio={false}
+                    message="Cosa vendiamo"
+                  />
+                )}
               </React.Fragment>
             );
           }
