@@ -5,12 +5,33 @@ import { useParams } from "react-router-dom";
 import { ErrorScreen, Header, LoadingScreen, Jumbotron } from "Components";
 import { Typography } from "@mui/material";
 import NotFound from "App/NotFound";
+import { useDispatch } from "react-redux";
+import { action } from "state";
+import Servizi from "./servizi";
+import Prodotti from "./prodotti";
 
 export default function Servizio() {
+  const dispatch = useDispatch();
   let { servizio } = useParams();
   let { categorie } = useSelector((state) => state.magazzino);
+  let { lista } = useSelector((state) => state.magazzino.prodotti);
 
-  if (categorie.getting) {
+  React.useEffect(() => {
+    let categoria = find(categorie.list, function (o) {
+      return o.url === servizio;
+    });
+
+    if (!isEmpty(categoria)) {
+      dispatch(
+        action.magazzino.prodotti.list({
+          categoria: categoria.id,
+          sito: "true",
+        })
+      );
+    }
+  }, [servizio, categorie, dispatch]);
+
+  if (categorie.getting && lista.getting) {
     return <LoadingScreen />;
   } else {
     if (categorie.getError) {
@@ -48,6 +69,9 @@ export default function Servizio() {
                 {categoria.wallpaper && (
                   <Jumbotron image={categoria.wallpaper} />
                 )}
+
+                {!isEmpty(lista.list) && <Servizi lista={lista} />}
+                {!isEmpty(lista.list) && <Prodotti lista={lista} />}
               </React.Fragment>
             );
           }
