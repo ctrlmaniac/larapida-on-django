@@ -1,10 +1,23 @@
 from rest_framework import serializers
 from rest_polymorphic.serializers import PolymorphicSerializer
 
-from ..models import Prodotto, ProdottoVariante, ProdottoVarianteAttributo
+from ..models import (
+    Prodotto,
+    ProdottoVariante,
+    ProdottoVarianteAttributo,
+    ProdottoImmagine,
+)
+
+
+class ProdottoImmagineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProdottoImmagine
+        fields = "__all__"
 
 
 class ProdottoSerializer(serializers.ModelSerializer):
+    immagini = ProdottoImmagineSerializer(many=True, read_only=True)
+
     class Meta:
         model = Prodotto
         fields = "__all__"
@@ -20,6 +33,7 @@ class ProdottoVarianteAttributoSerializer(serializers.ModelSerializer):
 
 class ProdottoVarianteSerializer(serializers.ModelSerializer):
     attributi = ProdottoVarianteAttributoSerializer(many=True, read_only=True)
+    immagini = ProdottoImmagineSerializer(many=True, read_only=True)
 
     class Meta:
         model = ProdottoVariante
