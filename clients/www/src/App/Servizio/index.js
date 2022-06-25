@@ -7,8 +7,8 @@ import { Typography } from "@mui/material";
 import NotFound from "App/NotFound";
 import { useDispatch } from "react-redux";
 import { action } from "state";
-import Servizi from "./servizi";
-import Prodotti from "./prodotti";
+import Servizi from "./Servizi";
+import Prodotti from "./Prodotti";
 
 export default function Servizio() {
   const dispatch = useDispatch();
