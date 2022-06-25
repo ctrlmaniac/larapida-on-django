@@ -8,7 +8,9 @@
   "scripts": {
     "collectclients": "python collectclients.py",
     "build:clients": "npx lerna exec --concurrency 1 -- yarn build",
-    "runserver": "python webapp/manage.py runserver"
+    "runserver": "python webapp/manage.py runserver",
+    "makemigrations": "python webapp/manage.py makemigrations",
+    "migrate": "python webapp/manage.py migrate"
   },
   "dependencies": {
     "npm": "^8.12.1"
