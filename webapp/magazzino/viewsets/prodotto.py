@@ -9,3 +9,11 @@ class ProdottoViewSet(viewsets.ModelViewSet):
     queryset = Prodotto.objects.all()
     serializer_class = ProdottoPolymorphicSerializer
     filter_backends = [filters.SearchFilter]
+    search_fields = ["nome", "descrizione_breve", "descrizione"]
+    filterset_fields = [
+        "categoria",
+        "categoria_secondaria",
+        "url",
+        "sito",
+        "categoria__url",
+    ]
