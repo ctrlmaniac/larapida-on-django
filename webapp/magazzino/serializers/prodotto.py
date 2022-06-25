@@ -3,9 +3,9 @@ from rest_polymorphic.serializers import PolymorphicSerializer
 
 from ..models import (
     Prodotto,
+    ProdottoImmagine,
     ProdottoVariante,
     ProdottoVarianteAttributo,
-    ProdottoImmagine,
 )
 
 

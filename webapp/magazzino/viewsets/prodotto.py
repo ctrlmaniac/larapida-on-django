@@ -16,5 +16,6 @@ class ProdottoViewSet(viewsets.ModelViewSet):
         "categoria_secondaria",
         "url",
         "sito",
+        "servizio",
         "categoria__url",
     ]

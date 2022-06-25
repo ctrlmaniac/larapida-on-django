@@ -57,6 +57,10 @@ class Prodotto(PolymorphicModel):
 
     prezzo_a_partire = models.BooleanField(default=False)
 
+    servizio = models.BooleanField(
+        default=False, help_text="Questo prodotto è un servizio"
+    )
+
     def save(self, *args, **kwargs):
         if self.url is None:
             if self.categoria is not None:
