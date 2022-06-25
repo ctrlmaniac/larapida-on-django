@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from ..models.prodotto_variante import ProdottoVariante, ProdottoVarianteAttributo
 
 

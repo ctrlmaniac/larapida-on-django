@@ -1,7 +1,9 @@
+import uuid
+
 from django.db import models
 from django.utils.text import slugify
 from polymorphic.models import PolymorphicModel
-import uuid
+
 from .categoria import Categoria
 from .categoria_secondaria import CategoriaSecondaria
 

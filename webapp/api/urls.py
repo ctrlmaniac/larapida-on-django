@@ -1,7 +1,6 @@
 from django.urls import include, path
-from rest_framework import routers
-
 from magazzino import viewsets as magazzino
+from rest_framework import routers
 
 router = routers.DefaultRouter()
 

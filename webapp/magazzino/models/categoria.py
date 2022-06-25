@@ -1,4 +1,5 @@
 from django.db import models
+
 from ..helpers import wallpapers_dir
 
 

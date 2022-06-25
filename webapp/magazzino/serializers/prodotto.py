@@ -1,11 +1,7 @@
 from rest_framework import serializers
 from rest_polymorphic.serializers import PolymorphicSerializer
 
-from ..models import (
-    Prodotto,
-    ProdottoVariante,
-    ProdottoVarianteAttributo,
-)
+from ..models import Prodotto, ProdottoVariante, ProdottoVarianteAttributo
 
 
 class ProdottoSerializer(serializers.ModelSerializer):

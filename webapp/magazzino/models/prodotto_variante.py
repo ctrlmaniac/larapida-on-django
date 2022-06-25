@@ -1,4 +1,5 @@
 from django.db import models
+
 from .prodotto import Prodotto
 from .prodotto_attributo import ProdottoAttributoValore
 

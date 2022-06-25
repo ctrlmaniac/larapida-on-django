@@ -6,23 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('magazzino', '0009_alter_prodotto_options_prodotto_categoria_and_more'),
+        ("magazzino", "0009_alter_prodotto_options_prodotto_categoria_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='prodotto',
-            name='prezzo',
-            field=models.DecimalField(blank=True, decimal_places=2, default=None, max_digits=19, null=True),
+            model_name="prodotto",
+            name="prezzo",
+            field=models.DecimalField(
+                blank=True, decimal_places=2, default=None, max_digits=19, null=True
+            ),
         ),
         migrations.AddField(
-            model_name='prodotto',
-            name='prezzo_a_partire',
+            model_name="prodotto",
+            name="prezzo_a_partire",
             field=models.BooleanField(default=False),
         ),
         migrations.AddField(
-            model_name='prodotto',
-            name='prezzo_offerta',
-            field=models.DecimalField(blank=True, decimal_places=2, default=None, max_digits=19, null=True),
+            model_name="prodotto",
+            name="prezzo_offerta",
+            field=models.DecimalField(
+                blank=True, decimal_places=2, default=None, max_digits=19, null=True
+            ),
         ),
     ]

@@ -6,18 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('magazzino', '0003_prodottoattributo_prodottoattributovalore'),
+        ("magazzino", "0003_prodottoattributo_prodottoattributovalore"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Prodotto',
+            name="Prodotto",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nome", models.CharField(max_length=100)),
             ],
             options={
-                'verbose_name_plural': 'Prodotti',
+                "verbose_name_plural": "Prodotti",
             },
         ),
     ]

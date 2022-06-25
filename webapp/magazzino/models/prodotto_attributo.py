@@ -14,7 +14,7 @@ class ProdottoAttributo(models.Model):
 class ProdottoAttributoValore(models.Model):
     attributo = models.ForeignKey(ProdottoAttributo, on_delete=models.CASCADE)
     valore = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.attributo.attributo + " " + self.valore
 

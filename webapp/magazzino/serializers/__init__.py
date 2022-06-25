@@ -1,8 +1,8 @@
-from .categoria import CategoriaSerializer, CategoriaSecondariaSerializer
+from .categoria import CategoriaSecondariaSerializer, CategoriaSerializer
 from .prodotto import (
+    ProdottoPolymorphicSerializer,
     ProdottoSerializer,
     ProdottoVarianteSerializer,
-    ProdottoPolymorphicSerializer,
 )
 
 __all__ = [

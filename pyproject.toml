@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "La Rapida website written in python with django"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 
+[tool.isort]
+profile = "black"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^4.0.5"
