@@ -6,4 +6,9 @@ class MagazzinoConfig(AppConfig):
     name = "magazzino"
 
     def ready(self):
-        from .signals import wallpapers_check, wallpapers_delete
+        from .signals import (
+            art_files_check,
+            art_files_delete,
+            wallpapers_check,
+            wallpapers_delete,
+        )

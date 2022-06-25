@@ -1,9 +1,8 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, permissions, viewsets
 
 from ..models.prodotto import Prodotto
 from ..serializers import ProdottoPolymorphicSerializer
-
-from django_filters.rest_framework import DjangoFilterBackend
 
 
 class ProdottoViewSet(viewsets.ModelViewSet):
