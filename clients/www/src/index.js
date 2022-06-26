@@ -11,13 +11,13 @@ import { NavigationScroll } from "Components";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ReduxProvider store={store}>
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <NavigationScroll>
           <CssBaseline />
           <App />
         </NavigationScroll>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   </ReduxProvider>
 );

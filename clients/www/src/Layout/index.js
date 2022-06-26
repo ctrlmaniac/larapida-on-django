@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { IconMenu2 } from "@tabler/icons";
 import { Box } from "@mui/system";
+import DrawerContent from "./Drawer";
 
 export default function Layout({ children }) {
   const [open, setOpen] = React.useState(false);
@@ -37,7 +38,7 @@ export default function Layout({ children }) {
       </AppBar>
 
       <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <p>Drawer</p>
+        <DrawerContent handleClose={() => setOpen(false)} />
       </Drawer>
 
       <Box sx={{ pt: "64px" }}>{children}</Box>
