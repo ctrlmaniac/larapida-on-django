@@ -1,9 +1,23 @@
-import { Avatar, Box, Container, IconButton, Typography } from "@mui/material";
+import {
+  ListItemText,
+  Avatar,
+  Box,
+  Container,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  Typography,
+  Grid,
+} from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { IconBrandFacebook, IconBrandInstagram } from "@tabler/icons";
+import { IconBrandFacebook, IconBrandInstagram, IconHome } from "@tabler/icons";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   return (
     <React.Fragment>
       <Box sx={{ backgroundColor: grey[400], pt: 3, pb: 3 }}>
@@ -49,6 +63,31 @@ export default function Footer() {
             >
               <IconBrandInstagram />
             </IconButton>
+          </Box>
+
+          <Box sx={{ mt: 6, mb: 3 }}>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="flex-start"
+              spacing={3}
+            >
+              <Grid item xs={12} sm={6} md={4}>
+                <Typography variant="h6" gutterBottom>
+                  Link Utili
+                </Typography>
+
+                <List>
+                  <ListItem button onClick={() => navigate("/")}>
+                    <ListItemIcon>
+                      <IconHome />
+                    </ListItemIcon>
+                    <ListItemText primary="Home" />
+                  </ListItem>
+                </List>
+              </Grid>
+            </Grid>
           </Box>
         </Container>
       </Box>
