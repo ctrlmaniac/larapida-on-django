@@ -37,7 +37,6 @@ export default function Prodotto() {
 
         default: // TODO
           return <React.Fragment>Multiple Products</React.Fragment>;
-          break;
       }
     }
   }

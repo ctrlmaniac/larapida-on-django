@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import ProdottoWidget from "../Widget";
 
-export default function ({ varianti }) {
+export default function Varianti({ varianti }) {
   return (
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" gutterBottom>

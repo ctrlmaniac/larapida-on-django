@@ -9,7 +9,11 @@ export default function ProdottoWidget({ prodotto }) {
     <Card sx={{ display: "flex" }}>
       <ButtonBase
         sx={{ width: "100% !important" }}
-        onClick={() => navigate("/" + prodotto.url)}
+        onClick={
+          prodotto.url
+            ? () => navigate("/" + prodotto.url)
+            : () => navigate("#")
+        }
       >
         <Box sx={{ display: "flex", flexDirection: "column" }}>
           <CardContent>
@@ -17,7 +21,7 @@ export default function ProdottoWidget({ prodotto }) {
               <b>{prodotto.nome}</b>
             </Typography>
             <Typography variant="body2">
-              {prodotto.prezzo || "prezzo non specificato"}
+              {prodotto.prezzo + " €" || "prezzo non specificato"}
             </Typography>
             <Typography variant="caption">
               {prodotto.descrizione_breve}
