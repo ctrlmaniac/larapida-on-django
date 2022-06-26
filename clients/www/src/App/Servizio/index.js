@@ -34,7 +34,7 @@ export default function Servizio() {
         })
       );
     }
-  }, [categorie, dispatch]);
+  }, [servizio, categorie, dispatch]);
 
   if (categorie.getting && lista.getting) {
     return <LoadingScreen />;
