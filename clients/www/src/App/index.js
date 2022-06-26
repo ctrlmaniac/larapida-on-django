@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { action } from "state";
 import Home from "./Home";
 import NotFound from "./NotFound";
+import Prodotto from "./Prodotto";
 import Servizio from "./Servizio";
 
 export default function App() {
@@ -16,6 +17,8 @@ export default function App() {
   return (
     <Routes>
       <Route index path="/" element={<Home />} />
+
+      <Route path="/:servizio/:prodotto" element={<Prodotto />} />
 
       <Route path="/:servizio" element={<Servizio />} />
     </Routes>

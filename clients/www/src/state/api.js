@@ -5,7 +5,7 @@ const api = axios.create({
   xsrfCookieName: "csrftoken",
   responseType: "json",
   withCredentials: true,
-  baseURL: "api/",
+  baseURL: "/api/",
 });
 
 export default api;
