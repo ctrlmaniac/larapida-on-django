@@ -10,6 +10,7 @@ import {
 import { IconMenu2 } from "@tabler/icons";
 import { Box } from "@mui/system";
 import DrawerContent from "./Drawer";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   const [open, setOpen] = React.useState(false);
@@ -42,6 +43,8 @@ export default function Layout({ children }) {
       </Drawer>
 
       <Box sx={{ pt: "64px" }}>{children}</Box>
+
+      <Footer />
     </React.Fragment>
   );
 }
