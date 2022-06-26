@@ -1,9 +1,24 @@
-import { ButtonBase, Card, CardContent, Typography, Box } from "@mui/material";
+import {
+  ButtonBase,
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  CardMedia,
+} from "@mui/material";
+import { find } from "lodash";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ProdottoWidget({ prodotto }) {
   const navigate = useNavigate();
+
+  let thumbnail = null;
+  if (prodotto.hasOwnProperty("immagini")) {
+    if (prodotto.immagini.length > 0) {
+      thumbnail = find(prodotto.immagini, (i) => i.thumbnail === true);
+    }
+  }
 
   return (
     <Card sx={{ display: "flex" }}>
@@ -15,8 +30,15 @@ export default function ProdottoWidget({ prodotto }) {
             : () => navigate("#")
         }
       >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <CardContent>
+        <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <CardContent
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
             <Typography>
               <b>{prodotto.nome}</b>
             </Typography>
@@ -27,6 +49,14 @@ export default function ProdottoWidget({ prodotto }) {
               {prodotto.descrizione_breve}
             </Typography>
           </CardContent>
+
+          {thumbnail && (
+            <CardMedia
+              sx={{ width: 150 }}
+              component="img"
+              image={thumbnail.file}
+            />
+          )}
         </Box>
       </ButtonBase>
     </Card>
