@@ -13,10 +13,12 @@ import {
 import { grey } from "@mui/material/colors";
 import { IconBrandFacebook, IconBrandInstagram, IconHome } from "@tabler/icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const navigate = useNavigate();
+  const categorie = useSelector((state) => state.magazzino.categorie.list);
 
   return (
     <React.Fragment>
@@ -87,6 +89,26 @@ export default function Footer() {
                   </ListItem>
                 </List>
               </Grid>
+
+              {categorie && (
+                <Grid item xs={12} sm={6} md={4}>
+                  <Typography variant="h6" gutterBottom>
+                    Servizi
+                  </Typography>
+
+                  <List>
+                    {categorie.map((c, i) => (
+                      <ListItem
+                        key={i}
+                        button
+                        onClick={() => navigate(`/${c.url}`)}
+                      >
+                        <ListItemText primary={c.nome} />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Grid>
+              )}
             </Grid>
           </Box>
         </Container>
