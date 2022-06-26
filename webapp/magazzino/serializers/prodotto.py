@@ -15,14 +15,6 @@ class ProdottoImmagineSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class ProdottoSerializer(serializers.ModelSerializer):
-    immagini = ProdottoImmagineSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Prodotto
-        fields = "__all__"
-
-
 class ProdottoVarianteAttributoSerializer(serializers.ModelSerializer):
     attributo = serializers.StringRelatedField(read_only=True)
 
@@ -37,6 +29,15 @@ class ProdottoVarianteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProdottoVariante
+        fields = "__all__"
+
+
+class ProdottoSerializer(serializers.ModelSerializer):
+    immagini = ProdottoImmagineSerializer(many=True, read_only=True)
+    varianti = ProdottoVarianteSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Prodotto
         fields = "__all__"
 
 

@@ -6,7 +6,7 @@ from .prodotto_attributo import ProdottoAttributoValore
 
 class ProdottoVariante(Prodotto):
     prodotto = models.ForeignKey(
-        Prodotto, on_delete=models.CASCADE, related_name="prodotti"
+        Prodotto, on_delete=models.CASCADE, related_name="varianti"
     )
 
     class Meta:
