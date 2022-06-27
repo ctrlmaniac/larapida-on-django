@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { action } from "state";
+import Contatti from "./Contatti";
 import Home from "./Home";
 import Prodotto from "./Prodotto";
 import Servizio from "./Servizio";
@@ -16,6 +17,8 @@ export default function App() {
   return (
     <Routes>
       <Route index path="/" element={<Home />} />
+
+      <Route path="/contatti" element={<Contatti />} />
 
       <Route path="/:servizio/:prodotto" element={<Prodotto />} />
 

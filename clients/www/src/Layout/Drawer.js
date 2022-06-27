@@ -7,7 +7,12 @@ import {
   ListItemText,
   ListSubheader,
 } from "@mui/material";
-import { IconBrandFacebook, IconBrandInstagram, IconHome } from "@tabler/icons";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconHome,
+  IconMail,
+} from "@tabler/icons";
 import { isEmpty } from "lodash";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -30,6 +35,13 @@ export default function DrawerContent({ handleClose }) {
             <IconHome />
           </ListItemIcon>
           <ListItemText primary="Home" />
+        </ListItem>
+
+        <ListItem button onClick={() => handleClick("/contatti")}>
+          <ListItemIcon>
+            <IconMail />
+          </ListItemIcon>
+          <ListItemText primary="Contatti" />
         </ListItem>
       </List>
       <Divider />

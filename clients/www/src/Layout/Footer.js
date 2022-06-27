@@ -11,7 +11,12 @@ import {
   Grid,
 } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import { IconBrandFacebook, IconBrandInstagram, IconHome } from "@tabler/icons";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconHome,
+  IconMail,
+} from "@tabler/icons";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -86,6 +91,13 @@ export default function Footer() {
                       <IconHome />
                     </ListItemIcon>
                     <ListItemText primary="Home" />
+                  </ListItem>
+
+                  <ListItem button onClick={() => navigate("/contatti")}>
+                    <ListItemIcon>
+                      <IconMail />
+                    </ListItemIcon>
+                    <ListItemText primary="Contatti" />
                   </ListItem>
                 </List>
               </Grid>
