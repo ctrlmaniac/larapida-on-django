@@ -16,6 +16,7 @@ import {
   IconBrandInstagram,
   IconHome,
   IconMail,
+  IconShield,
 } from "@tabler/icons";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -98,6 +99,13 @@ export default function Footer() {
                       <IconMail />
                     </ListItemIcon>
                     <ListItemText primary="Contatti" />
+                  </ListItem>
+
+                  <ListItem button onClick={() => navigate("/privacy")}>
+                    <ListItemIcon>
+                      <IconShield />
+                    </ListItemIcon>
+                    <ListItemText primary="Privacy" />
                   </ListItem>
                 </List>
               </Grid>

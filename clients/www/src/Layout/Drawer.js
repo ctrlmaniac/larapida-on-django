@@ -12,6 +12,7 @@ import {
   IconBrandInstagram,
   IconHome,
   IconMail,
+  IconShield,
 } from "@tabler/icons";
 import { isEmpty } from "lodash";
 import React from "react";
@@ -42,6 +43,13 @@ export default function DrawerContent({ handleClose }) {
             <IconMail />
           </ListItemIcon>
           <ListItemText primary="Contatti" />
+        </ListItem>
+
+        <ListItem button onClick={() => handleClick("/privacy")}>
+          <ListItemIcon>
+            <IconShield />
+          </ListItemIcon>
+          <ListItemText primary="Privacy" />
         </ListItem>
       </List>
       <Divider />
