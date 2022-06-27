@@ -23,6 +23,7 @@ PRODUCTION = env("PRODUCTION")
 ALLOWED_HOSTS = [
     "larapidamolinetto.com",
     "127.0.0.1",
+    "localhost",
 ]
 
 
