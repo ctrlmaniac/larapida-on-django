@@ -1,6 +1,7 @@
 from django.urls import include, path
 from magazzino import viewsets as magazzino
 from rest_framework import routers
+
 from .viewsets import ContattiView
 
 router = routers.DefaultRouter()
