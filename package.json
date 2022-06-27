@@ -12,7 +12,8 @@
         "makemigrations": "python webapp/manage.py makemigrations",
         "migrate": "python webapp/manage.py migrate",
         "check:deploy": "python webapp/manage.py check --deploy",
-        "start:www": "yarn workspace www start"
+        "start:www": "yarn workspace www start",
+        "export:requirements": "poetry export -f requirements.txt --output requirements.txt"
     },
     "dependencies": {
         "npm": "^8.12.1"
