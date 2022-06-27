@@ -11,8 +11,7 @@ class AppView(TemplateView):
         context[
             "og_image"
         ] = "https://larapidamolinetto.com/static/www/wallpapers/main.jpg"
-        context[
-            "desciption"
-        ] = "ripariamo scarpe e borse, duplichiamo le chiavi e radiocomandi e tanti altri servizi"
+        context["desciption"] = "ripariamo scarpe e borse, "
+        "duplichiamo le chiavi e radiocomandi e tanti altri servizi"
 
         return context
