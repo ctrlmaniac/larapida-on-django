@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "larapida-on-django"
-version = "0.1.0"
+version = "1.0.0"
 description = "La Rapida website written in python with django"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 
