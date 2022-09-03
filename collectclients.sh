@@ -1,25 +1,23 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 cd clients
 
 for client in *; do
-    # Delete old files
+
+    # Delete old directories
     if [ -d ../webapp/$client/templates/$client ]; then
         rm -rf ../webapp/$client/templates/$client
     fi
 
-    # Check if static directory exists
-    if [ ! -d ../webapp/$client/static/$client ]; then
-        ../webapp/$client/static/$client
+    if [ -d ../webapp/$client/static/$client ]; then
+        rm -rf ../webapp/$client/static/$client
     fi
 
     # Create directories
     mkdir -p ../webapp/$client/templates/$client
     mkdir -p ../webapp/$client/static/$client
 
-    # Copy index.html
+    # Copy files
     cp -r $client/build/index.html ../webapp/$client/templates/$client/index.html
-
-    # Copy static files
     cp -r $client/build/static/ ../webapp/$client/static/$client/
 done
