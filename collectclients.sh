@@ -1,19 +1,19 @@
-#!/bin/sh
+#!/usr/bin/bash
 
 cd clients
 
 for client in *; do
-    # Delete templates dir
+    # Delete old files
     if [ -d ../webapp/$client/templates/$client ]; then
         rm -rf ../webapp/$client/templates/$client
     fi
 
-    # delete static directory
-    if [ -d ../webapp/$client/static/$client ]; then
-        rm -rf ../webapp/$client/static/$client
+    # Check if static directory exists
+    if [ ! -d ../webapp/$client/static/$client ]; then
+        ../webapp/$client/static/$client
     fi
-    
-    # Create directory
+
+    # Create directories
     mkdir -p ../webapp/$client/templates/$client
     mkdir -p ../webapp/$client/static/$client
 
