@@ -16,7 +16,7 @@ ALLOWED_HOSTS = [
     "localhost",
 ]
 
-CSRF_TRUSTED_ORIGIN = ["https://*.larapidamolinetto.com"]
+CSRF_TRUSTED_ORIGIN = ["https://larapidamolinetto.com"]
 
 if PRODUCTION:
     CSRF_COOKIE_SECURE = True
