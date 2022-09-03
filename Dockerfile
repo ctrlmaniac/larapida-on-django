@@ -31,5 +31,3 @@ RUN poetry install --only main
 COPY entrypoint.sh /home
 RUN sed -i 's/\r$//g' /home/entrypoint.sh
 RUN chmod +x /home/entrypoint.sh
-
-ENTRYPOINT ["/home/entrypoint.sh"]
