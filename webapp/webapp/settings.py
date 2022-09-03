@@ -21,7 +21,6 @@ CSRF_TRUSTED_ORIGIN = ["https://larapidamolinetto.com"]
 if PRODUCTION:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = True
-    SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
 
 # Application definition
