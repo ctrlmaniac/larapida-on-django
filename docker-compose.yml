@@ -2,7 +2,7 @@ name: larapida
 services:
   webapp:
     container_name: larapida-webapp
-    build: .
+    image: ctrlmaniac/larapida:latest
     entrypoint: /home/entrypoint.sh
     volumes:
       - ./data/media:/home/public/media
