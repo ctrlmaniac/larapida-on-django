@@ -1,0 +1,7 @@
+name: larapida
+services:
+    webapp:
+        container_name: larapida-webapp
+        build: .
+        ports:
+            - "8000:8000"
