@@ -9,9 +9,10 @@
         "collectclients": "bash collectclients.sh",
         "precollectclients": "yarn run build",
         "postcollectclients": "git add -A && git commit -m 'collected clients' && git push",
-        "runserver": "docker compose up --build",
-        "migrate": "docker exec -it larapida-webapp .venv/bin/python webapp/manage.py migrate",
-        "createsuperuser": "docker exec -it larapida-webapp .venv/bin/python webapp/manage.py createsuperuser"
+        "runserver": "poetry run python webapp/manage.py runserver --settings=webapp.development",
+        "migrate": "poetry run python webapp/manage.py migrate --settings=webapp.development",
+        "createsuperuser": "poetry run python webapp/manage.py createsuperuser --settings=webapp.development",
+        "makemigrations": "poetry run python webapp/manage.py makemigrations --settings=webapp.development"
     },
     "devDependencies": {
         "lerna": "^5.5.0"
