@@ -51,7 +51,7 @@ jobs:
           port: ${{ secrets.REMOTE_PORT }}
           script: docker compose down
 
-      - name: run docker compose down
+      - name: run docker compose pull
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
