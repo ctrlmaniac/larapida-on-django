@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      - postgres
     environment:
       - SECRET_KEY=$SECRET_KEY
       - PRODUCTION=0
