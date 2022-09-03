@@ -3,6 +3,9 @@ services:
   webapp:
     container_name: larapida-webapp
     build: .
+    volumes:
+      - ./data/media:/home/public/media
+      - ./data/static:/home/public/static
     ports:
       - "8000:8000"
     depends_on:
