@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "larapida"
+version = "3.0.0"
+description = "La Rapida di Davide Di Criscito's website"
+authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
+readme = "README.md"
+homepage = "https://larapidamolinetto.com"
+packages = [
+    { include = "larapida", from = "webapp" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
