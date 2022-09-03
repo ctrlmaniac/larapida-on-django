@@ -1,3 +1,10 @@
 {
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "editor.renderWhitespace": "boundary",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "cornflakes.linter.executablePath": ".venv/bin/flake8",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

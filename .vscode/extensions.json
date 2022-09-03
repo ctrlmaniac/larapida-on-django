@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "bungcip.better-toml",
+        "ms-vscode-remote.remote-wsl",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "kevinglasson.cornflakes-linter"
+    ]
+}
