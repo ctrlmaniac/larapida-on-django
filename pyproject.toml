@@ -6,11 +6,19 @@ authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 readme = "README.md"
 homepage = "https://larapidamolinetto.com"
 
+[tool.isort]
+profile = "black"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 Django = "^4.1"
 gunicorn = "^20.1.0"
-
+Pillow = "^9.2.0"
+django-polymorphic = "^3.1.0"
+django-rest-polymorphic = "^0.1.10"
+djangorestframework = "^3.13.1"
+Markdown = "^3.4.1"
+django-filter = "^22.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
