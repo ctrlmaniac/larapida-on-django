@@ -8,9 +8,11 @@
         "build": "yarn workspaces run build",
         "collectclients": "bash collectclients.sh",
         "precollectclients": "yarn run build",
-        "postcollectclients": "git add -A && git commit -m 'collected clients' && git push"
+        "postcollectclients": "git add -A && git commit -m 'collected clients' && git push",
+        "runserver": "docker compose up --build"
     },
     "devDependencies": {
         "lerna": "^5.5.0"
     }
 }
+
