@@ -6,7 +6,7 @@ authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 readme = "README.md"
 homepage = "https://larapidamolinetto.com"
 packages = [
-    { include = "larapida", from = "webapp" },
+    { include = "webapp" },
 ]
 
 [tool.poetry.dependencies]
