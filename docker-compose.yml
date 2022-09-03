@@ -23,12 +23,13 @@ services:
       - DB_USER=$DB_USER
       - DB_PASSWORD=$DB_PASSWORD
 
-  db:
+  postgres:
     container_name: larapida-db
-    image: postgres:14-alpine
+    image: postgres:14.5-alpine
     volumes:
       - ./data/db:/var/lib/postgresql/data/
     environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
       - POSTGRES_USER=$DB_USER
       - POSTGRES_PASSWORD=$DB_PASSWORD
       - POSTGRES_DB=$DB_NAME
