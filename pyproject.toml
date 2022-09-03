@@ -5,9 +5,6 @@ description = "La Rapida di Davide Di Criscito's website"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 readme = "README.md"
 homepage = "https://larapidamolinetto.com"
-packages = [
-    { include = "webapp" },
-]
 
 [tool.poetry.dependencies]
 python = "^3.10"
