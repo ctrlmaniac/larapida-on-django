@@ -5,7 +5,7 @@
         "clients/*"
     ],
     "scripts": {
-        "build": "npx lerna exec --concurrency 1 -- yarn build",
+        "build": "yarn workspaces run build",
         "collectclients": "bash collectclients.sh",
         "precollectclients": "yarn run build",
         "postcollectclients": "git add -A && git commit -m 'collected clients' && git push"
