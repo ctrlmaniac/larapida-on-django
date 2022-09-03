@@ -7,7 +7,9 @@ RUN apk add --no-cache \
     gcc \
     libressl-dev \
     musl-dev \
-    libffi-dev
+    libffi-dev \
+    postgresql-dev \
+    python3-dev
 
 # Install poetry
 RUN pip install -U pip setuptools
