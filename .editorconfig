@@ -11,5 +11,5 @@ charset = utf-8
 trim_trailing_whitespace = false
 insert_final_newline = false
 
-[*.{js,html,yml}]
+[*.{js,html,yml,ts,tsx}]
 indent_size = 2
