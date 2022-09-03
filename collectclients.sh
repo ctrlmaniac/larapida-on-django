@@ -3,7 +3,6 @@
 cd clients
 
 for client in *; do
-
     # Delete old directories
     if [ -d ../webapp/$client/templates/$client ]; then
         rm -rf ../webapp/$client/templates/$client
