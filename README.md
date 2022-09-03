@@ -14,12 +14,12 @@ You can download the [docker-compose.yml](./docker-compose.yml) file in a direct
 
 ### Before running docker
 
-Be sure to have a `.env` file inside the same directory where the `docker-compose.yml` file is!
+Be sure to have a `.env` file in the root!
 
 This `.env` file needs to have the following secrets:
 
 ```
-KEY=
+SECRET_KEY=
 
 DEBUG=1
 PRODUCTION=0

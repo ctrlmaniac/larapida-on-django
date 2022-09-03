@@ -12,7 +12,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - SECRET_KEY=${KEY}
+      - SECRET_KEY=${SECRET_KEY}
       - PRODUCTION=${PRODUCTION}
       - DEBUG=${DEBUG}
       - DEFAULT_FROM_EMAIL=${DEFAULT_FROM_EMAIL}
