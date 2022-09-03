@@ -16,6 +16,8 @@ ALLOWED_HOSTS = [
     "localhost",
 ]
 
+CSRF_TRUSTED_ORIGIN = ["https://*.larapidamolinetto.com"]
+
 
 # Application definition
 
