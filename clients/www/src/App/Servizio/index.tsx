@@ -14,6 +14,7 @@ import {
 import NotFound from "App/NotFound";
 import Servizi from "./Servizi";
 import Prodotti from "./Prodotti";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Servizio: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -67,7 +68,7 @@ const Servizio: React.FC = () => {
                 return (
                   <Container maxWidth="md">
                     <Box sx={{ mb: 3 }}>
-                      <Typography>{categoria?.descrizione}</Typography>
+                      <ReactMarkdown>{categoria?.descrizione}</ReactMarkdown>
                     </Box>
                   </Container>
                 );
