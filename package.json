@@ -9,7 +9,7 @@
         "build": "yarn workspaces run build",
         "collectclients": "bash collectclients.sh",
         "precollectclients": "yarn run build",
-        "postcollectclients": "git add -A && git commit -m 'collected clients' && git push",
+        "postcollectclients": "git add -A && git commit -m \"collected clients\" && git push",
         "runserver": "poetry run python webapp/manage.py runserver --settings=webapp.development",
         "migrate": "poetry run python webapp/manage.py migrate --settings=webapp.development",
         "createsuperuser": "poetry run python webapp/manage.py createsuperuser --settings=webapp.development",
