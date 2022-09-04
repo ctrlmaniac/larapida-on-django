@@ -3,6 +3,8 @@ export default interface Categoria {
   sito?: boolean;
   nome?: string;
   descrizione_breve?: string;
+  descrizione?: string;
   wallpaper?: string;
   url?: string;
 }
+
