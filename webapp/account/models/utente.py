@@ -27,6 +27,9 @@ class Utente(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
+    is_staff = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
+
     def __str__(self):
         return self.email
 
