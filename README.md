@@ -10,13 +10,13 @@
 
 ## Want to try in your local machine?
 
-You can download the [docker-compose.yml](./docker-compose.yml) file in a directory of your choice and then run `docker compose up -d` to install the docker image and run the containers!
+You have two options, the first is with **docker** the second is by downloading the entire project on your local machine!
 
-### Before running docker
+### First of all
 
-Be sure to have a `.env` file in the root!
+Create a directory or download the repository and create a file called `.env`.
 
-This `.env` file needs to have the following secrets:
+Put the following variables inside this file:
 
 ```
 SECRET_KEY=
@@ -35,3 +35,67 @@ DB_PASSWORD=
 ```
 
 Be sure to fill all secrets! These secrets will be used as environment variables inside the docker container!
+
+### Run larapida locally
+
+Download the repository and install the dependencies!
+
+This project is managed with [poetry](https://python-poetry.org/docs/).
+
+Install poetry by following the instruction in the link provided above.
+
+Set poetry virtualenvs to be created inside the projects:
+
+`poetry config virtualenvs.in-project true`
+
+Now you're ready to install all python dependencies by running the following command `poetry install`!
+
+When all dependencies are installed, you can run `poetry shell` to activate the environment.
+
+To run the project run this commands first:
+
+```
+python webapp/manange.py migrate --settings=webapp.development
+
+python webapp/manage.py collectstatic --no-input --clear --settings=webapp.development
+```
+
+Now you have to create a superuser!
+
+`python webapp/manage.py createsuperuser --settigns=webapp.development`
+
+### Run larapida with Docker
+
+You can download the [docker-compose.yml](./docker-compose.yml) file in a directory of your choice and then run `docker compose up -d` to install the docker image and run the containers! Be sure to create a `.env` file inside the directory as mentioned above!
+
+Create a superuser:
+
+`docker exec -it larapida-webapp .venv/bin/python webapp/manage.py createsuperuser`
+
+Then you're ready to go!
+
+## Troubleshooting
+
+If you have problems logging into the admin site that's because django forgot to give admin privileges to your user. To give admin privileges to the user you've created open the django shell and follow these commands:
+
+To open a django shell you need to run this command:
+
+If you've downloaded the project:
+`poetry run python webapp/manage.py shell --settings=development`
+
+If you're using docker:
+`docker exec -it larapida-webapp .venv/bin/python webapp/manage.py shell`
+
+and then:
+
+```
+from account.models import Utente
+
+user = Utente.objects.get(email="youremail@example.com")
+
+user.is_admin = True
+
+user.save()
+```
+
+Now you should be allowed to log into the admin site!
