@@ -35,7 +35,7 @@ const Dettagli: React.FC<Props> = ({ prodotto }) => {
   const ProdottoDescrizione: React.FC = () => {
     if (prodotto.descrizione) {
       return (
-        <Container>
+        <Container maxWidth="md">
           <ReactMarkdown>{prodotto.descrizione}</ReactMarkdown>
         </Container>
       );
@@ -64,3 +64,4 @@ const Dettagli: React.FC<Props> = ({ prodotto }) => {
 };
 
 export default Dettagli;
+
