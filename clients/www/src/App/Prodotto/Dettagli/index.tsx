@@ -1,5 +1,7 @@
-import { Typography, Container } from "@mui/material";
+import { Typography, Container, Link } from "@mui/material";
 import { Header, Page } from "Components";
+import { useAppSelector } from "hooks";
+import { find } from "lodash";
 import { Prodotto } from "models";
 import React from "react";
 import ReactMarkdown from "react-markdown";
@@ -12,6 +14,11 @@ interface Props {
 }
 
 const Dettagli: React.FC<Props> = ({ prodotto }) => {
+  const categorie = useAppSelector((state) => state.categorie);
+  const categoria = find(categorie.list, function (o) {
+    return o.id === prodotto.categoria;
+  });
+
   const ProdottoImmagini: React.FC = () => {
     if (prodotto.immagini) {
       if (prodotto.immagini.length > 0) {
@@ -47,6 +54,11 @@ const Dettagli: React.FC<Props> = ({ prodotto }) => {
   return (
     <Page>
       <Header>
+        <Link href={`/${categoria?.url}`}>
+          <Typography variant="caption" sx={{ textTransform: "uppercase" }}>
+            {categoria?.nome}
+          </Typography>
+        </Link>
         <Typography variant="h3" gutterBottom>
           {prodotto.nome}
         </Typography>
@@ -64,4 +76,3 @@ const Dettagli: React.FC<Props> = ({ prodotto }) => {
 };
 
 export default Dettagli;
-

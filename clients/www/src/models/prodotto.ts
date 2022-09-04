@@ -12,4 +12,6 @@ export default interface Prodotto {
   immagini?: { thumbnail: boolean; file: string }[];
   resourcetype?: string;
   varianti?: Prodotto[];
+  categoria?: number;
 }
+
