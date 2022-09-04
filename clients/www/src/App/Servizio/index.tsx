@@ -1,7 +1,7 @@
 import React from "react";
 import { isEmpty, find } from "lodash";
 import { useParams } from "react-router-dom";
-import { Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "hooks";
 import list from "features/prodotti/list";
 import {
@@ -62,6 +62,20 @@ const Servizio: React.FC = () => {
               }
             };
 
+            const Descrizione = () => {
+              if (categoria?.descrizione) {
+                return (
+                  <Container maxWidth="md">
+                    <Box sx={{ mb: 3 }}>
+                      <Typography>{categoria?.descrizione}</Typography>
+                    </Box>
+                  </Container>
+                );
+              } else {
+                return null;
+              }
+            };
+
             return (
               <Page>
                 <Header>
@@ -75,6 +89,8 @@ const Servizio: React.FC = () => {
                 </Header>
 
                 <Wallpaper />
+
+                <Descrizione />
 
                 <Servizi />
                 <Prodotti />
