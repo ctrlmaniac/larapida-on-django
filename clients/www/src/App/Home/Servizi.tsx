@@ -70,7 +70,9 @@ const Servizi: React.FC = () => {
                             <CardMedia
                               component="img"
                               height="140"
-                              image={cat.wallpaper}
+                              image={
+                                cat.wallpaper.split(".")[0] + "-thumbnail.webp"
+                              }
                               alt={cat.nome}
                             />
                           )}
