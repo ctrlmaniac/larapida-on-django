@@ -56,6 +56,14 @@ const Servizi: React.FC = () => {
                   if (!cat.sito) {
                     return null;
                   } else {
+                    const wallpaper = function (wallpaper: string) {
+                      var splitted = wallpaper.split(".");
+
+                      if (splitted.length === 2) {
+                        return splitted[0] + "-thumbnail.webp";
+                      }
+                      return splitted[0] + splitted[1] + "-thumbnail.webp";
+                    };
                     return (
                       <Grid key={cat.id} item xs={12} sm={6} md={4}>
                         <Card
@@ -70,9 +78,7 @@ const Servizi: React.FC = () => {
                             <CardMedia
                               component="img"
                               height="140"
-                              image={
-                                cat.wallpaper.slice(0, -5) + "-thumbnail.webp"
-                              }
+                              image={wallpaper(cat.wallpaper)}
                               alt={cat.nome}
                             />
                           )}
