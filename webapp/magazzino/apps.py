@@ -11,4 +11,5 @@ class MagazzinoConfig(AppConfig):
             art_files_delete,
             wallpapers_check,
             wallpapers_delete,
+            wallpapers_thumbnail_create,
         )
