@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "larapida"
-version = "3.2.2"
+version = "3.2.3"
 description = "La Rapida di Davide Di Criscito's website"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 readme = "README.md"
