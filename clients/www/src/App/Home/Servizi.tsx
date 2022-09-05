@@ -62,7 +62,9 @@ const Servizi: React.FC = () => {
                       if (splitted.length === 2) {
                         return splitted[0] + "-thumbnail.webp";
                       }
-                      return splitted[0] + splitted[1] + "-thumbnail.webp";
+                      return (
+                        splitted[0] + "." + splitted[1] + "-thumbnail.webp"
+                      );
                     };
                     return (
                       <Grid key={cat.id} item xs={12} sm={6} md={4}>
