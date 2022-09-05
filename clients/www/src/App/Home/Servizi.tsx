@@ -71,7 +71,7 @@ const Servizi: React.FC = () => {
                               component="img"
                               height="140"
                               image={
-                                cat.wallpaper.split(".")[0] + "-thumbnail.webp"
+                                cat.wallpaper.slice(0, -5) + "-thumbnail.webp"
                               }
                               alt={cat.nome}
                             />
