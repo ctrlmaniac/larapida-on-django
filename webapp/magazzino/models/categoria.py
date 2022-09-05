@@ -19,11 +19,6 @@ class Categoria(models.Model):
         default=None,
         upload_to=wallpapers_dir,
     )
-    wallpaper_thumbnail = models.ImageField(
-        blank=True,
-        default=None,
-        upload_to=wallpapers_dir,
-    )
 
     def __str__(self):
         return self.nome
