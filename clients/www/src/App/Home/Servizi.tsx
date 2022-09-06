@@ -58,13 +58,12 @@ const Servizi: React.FC = () => {
                   } else {
                     const wallpaper = function (wallpaper: string) {
                       var splitted = wallpaper.split(".");
-
-                      if (splitted.length === 2) {
-                        return splitted[0] + "-thumbnail.webp";
-                      }
-                      return (
-                        splitted[0] + "." + splitted[1] + "-thumbnail.webp"
-                      );
+                      splitted.pop();
+                      splitted[splitted.length - 1] = `${
+                        splitted[splitted.length - 1]
+                      }-thumbnail`;
+                      splitted.push("webp");
+                      return splitted.join(".");
                     };
                     return (
                       <Grid key={cat.id} item xs={12} sm={6} md={4}>
