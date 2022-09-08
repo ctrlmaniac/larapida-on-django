@@ -13,6 +13,9 @@ const root = ReactDOM.createRoot(
 );
 
 const theme = createTheme({
+  typography: {
+    fontFamily: ["Poppins", "sans-serif"].join(","),
+  },
   palette: {
     background: {
       default: "#f5f3f4",
@@ -43,3 +46,4 @@ root.render(
     </ReduxProvider>
   </React.StrictMode>
 );
+
