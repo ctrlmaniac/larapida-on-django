@@ -8,6 +8,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
   ListItemIcon,
   Typography,
   Grid,
@@ -90,26 +91,26 @@ const Footer: React.FC = () => {
                 </Typography>
 
                 <List>
-                  <ListItem button onClick={() => navigate("/")}>
+                  <ListItemButton onClick={() => navigate("/")}>
                     <ListItemIcon>
                       <IconHome />
                     </ListItemIcon>
                     <ListItemText primary="Home" />
-                  </ListItem>
+                  </ListItemButton>
 
-                  <ListItem button onClick={() => navigate("/contatti")}>
+                  <ListItemButton onClick={() => navigate("/contatti")}>
                     <ListItemIcon>
                       <IconMail />
                     </ListItemIcon>
                     <ListItemText primary="Contatti" />
-                  </ListItem>
+                  </ListItemButton>
 
-                  <ListItem button onClick={() => navigate("/privacy")}>
+                  <ListItemButton onClick={() => navigate("/privacy")}>
                     <ListItemIcon>
                       <IconShield />
                     </ListItemIcon>
                     <ListItemText primary="Privacy" />
-                  </ListItem>
+                  </ListItemButton>
                 </List>
               </Grid>
 
@@ -121,13 +122,12 @@ const Footer: React.FC = () => {
 
                   <List>
                     {categorie.list.map((c, i) => (
-                      <ListItem
+                      <ListItemButton
                         key={i}
-                        button
                         onClick={() => navigate(`/${c.url}`)}
                       >
                         <ListItemText primary={c.nome} />
-                      </ListItem>
+                      </ListItemButton>
                     ))}
                   </List>
                 </Grid>
@@ -151,8 +151,9 @@ const Footer: React.FC = () => {
                     {orari.list.map((o) => {
                       return (
                         <ListItem key={o.id}>
-                          {giorni[parseInt(o.giorno!) - 1]} dalle {o.dalle} alle{" "}
-                          {o.alle}
+                          {giorni[parseInt(o.giorno!) - 1]} dalle{" "}
+                          {o.dalle?.substring(0, 5)} alle{" "}
+                          {o.alle?.substring(0, 5)}
                         </ListItem>
                       );
                     })}
@@ -171,7 +172,8 @@ const Footer: React.FC = () => {
                       if (o.aperto) {
                         return (
                           <ListItem key={o.id}>
-                            {o.giorno} dalle {o.dalle} alle {o.alle}
+                            {o.giorno} dalle {o.dalle?.substring(0, 5)} alle{" "}
+                            {o.alle?.substring(0, 5)}
                           </ListItem>
                         );
                       } else {
