@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = (props) => {
 
   return (
     <React.Fragment>
-      <AppBar color="inherit" position="fixed" elevation={0}>
+      <AppBar color="inherit" position="sticky" elevation={0}>
         <Toolbar>
           <IconButton
             onClick={() => setOpen(true)}
@@ -56,7 +56,7 @@ const Layout: React.FC<Props> = (props) => {
         <DrawerContent handleClose={() => setOpen(false)} />
       </Drawer>
 
-      <Box sx={{ pt: "64px" }}>{props.children}</Box>
+      <Box>{props.children}</Box>
 
       <Footer />
     </React.Fragment>
