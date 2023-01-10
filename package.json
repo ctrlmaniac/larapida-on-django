@@ -12,7 +12,9 @@
         "createsuperuser": "poetry run python webapp/manage.py createsuperuser --settings=webapp.development",
         "makemigrations": "poetry run python webapp/manage.py makemigrations --settings=webapp.development",
         "shell": "poetry run python webapp/manage.py shell --settings=webapp.development",
-        "collectstatic": "poetry run python webapp/manage.py collectstatic --settings=webapp.development"
+        "collectstatic": "poetry run python webapp/manage.py collectstatic --settings=webapp.development",
+        "collectclients": "bash collectclients.sh",
+        "precollectclients": "lerna exec -- npm run build"
     },
     "devDependencies": {
         "lerna": "^5.6.2"

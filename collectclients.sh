@@ -2,8 +2,7 @@
 
 # Delete old files
 
-rm -rf webapp/clients/static
-rm -rf webapp/clients/templates
+rm -rf webapp/clients
 
 mkdir -p webapp/clients/static
 mkdir -p webapp/clients/templates
