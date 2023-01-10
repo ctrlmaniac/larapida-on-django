@@ -136,5 +136,4 @@ data/
 node_modules/
 
 # Static and Templates files
-webapp/clients/static
-webapp/clients/templates
+webapp/clients
