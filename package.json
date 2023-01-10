@@ -5,11 +5,8 @@
         "clients/*"
     ],
     "scripts": {
-        "start:www": "yarn workspace www run start",
-        "build": "yarn workspaces run build",
-        "collectclients": "bash collectclients.sh",
-        "precollectclients": "yarn run build",
-        "postcollectclients": "git add -A && git commit -m \"collected clients\" && git push",
+        "start:www": "lerna exec --scope www -- npm run dev",
+        "build:www": "lerna exec --scope www -- npm run build",
         "runserver": "poetry run python webapp/manage.py runserver --settings=webapp.development",
         "migrate": "poetry run python webapp/manage.py migrate --settings=webapp.development",
         "createsuperuser": "poetry run python webapp/manage.py createsuperuser --settings=webapp.development",
@@ -17,6 +14,6 @@
         "shell": "poetry run python webapp/manage.py shell --settings=webapp.development"
     },
     "devDependencies": {
-        "lerna": "^5.5.0"
+        "lerna": "^5.6.2"
     }
 }
