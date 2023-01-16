@@ -2,7 +2,7 @@ FROM python:3.10-alpine
 
 WORKDIR /home
 
-RUN apk add --no-cache \
+RUN apk add \
     curl \
     gcc \
     libressl-dev \
