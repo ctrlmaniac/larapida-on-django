@@ -1,5 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
-import { Prodotto } from "models";
+import { Prodotto } from "~/models";
 import React from "react";
 import ProdottoWidget from "../Widget";
 
@@ -34,3 +34,4 @@ const Varianti: React.FC<Props> = ({ varianti }) => {
 };
 
 export default Varianti;
+

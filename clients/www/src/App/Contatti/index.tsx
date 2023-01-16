@@ -13,7 +13,8 @@ import {
   Checkbox,
 } from "@mui/material";
 import { IconSend } from "@tabler/icons";
-import api from "api";
+import api from "~/api";
+import moodWallpaper from "~/assets/wallpapers/mood.jpg";
 
 const Contatti: React.FC = () => {
   const [formError, setFormError] = React.useState(true);
@@ -101,9 +102,7 @@ const Contatti: React.FC = () => {
     <React.Fragment>
       <Box
         sx={{
-          backgroundImage: `url(${
-            process.env.PUBLIC_URL + "/static/wallpapers/mood.jpg"
-          })`,
+          backgroundImage: `url(${moodWallpaper})`,
           backgroundPosition: "center center",
         }}
       >

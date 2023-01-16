@@ -1,6 +1,6 @@
 import React from "react";
-import { LoadingSkeleton } from "Components";
-import { useAppSelector } from "hooks";
+import { LoadingSkeleton } from "~/Components";
+import { useAppSelector } from "~/hooks";
 import { useNavigate } from "react-router-dom";
 import {
   Alert,

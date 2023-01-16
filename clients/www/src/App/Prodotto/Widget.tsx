@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { find } from "lodash";
 import { useNavigate } from "react-router-dom";
-import { Prodotto } from "models";
+import { Prodotto } from "~/models";
 
 interface Props {
   prodotto: Prodotto;
@@ -71,3 +71,4 @@ const ProdottoWidget: React.FC<Props> = ({ prodotto }) => {
 };
 
 export default ProdottoWidget;
+

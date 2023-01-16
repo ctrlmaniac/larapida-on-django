@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { NegozioOrari } from "models";
+import type { NegozioOrari } from "~/models";
 
 interface NegozioOrariState {
   listing: boolean;
@@ -33,3 +33,4 @@ export const negozioOrariSlice = createSlice({
 export const { listSuccess, listFail } = negozioOrariSlice.actions;
 
 export default negozioOrariSlice.reducer;
+

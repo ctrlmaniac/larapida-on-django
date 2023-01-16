@@ -1,22 +1,21 @@
 #!/bin/sh
 
+# Delete old files
+
+rm -rf webapp/clients
+
+mkdir -p webapp/clients/static
+mkdir -p webapp/clients/templates
+
 cd clients
 
 for client in *; do
-    # Delete old directories
-    if [ -d ../webapp/$client/templates/$client ]; then
-        rm -rf ../webapp/$client/templates/$client
-    fi
-
-    if [ -d ../webapp/$client/static/$client ]; then
-        rm -rf ../webapp/$client/static/$client
-    fi
-
     # Create directories
-    mkdir -p ../webapp/$client/templates/$client
-    mkdir -p ../webapp/$client/static/$client
-
+    mkdir ../webapp/clients/templates/$client
+    mkdir ../webapp/clients/static/$client
+    
     # Copy files
-    cp -r $client/build/index.html ../webapp/$client/templates/$client/index.html
-    cp -r $client/build/static/ ../webapp/$client/static/$client/
+    cp -r $client/dist/index.html ../webapp/clients/templates/$client/index.html
+    cp -r $client/dist/static/$client ../webapp/clients/static
 done
+

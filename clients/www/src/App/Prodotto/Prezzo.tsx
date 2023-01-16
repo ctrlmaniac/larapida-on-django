@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { Prodotto } from "models";
+import { Prodotto } from "~/models";
 
 interface Props {
   prodotto: Prodotto;
@@ -29,3 +29,4 @@ const Prezzo: React.FC<Props> = ({ prodotto }) => {
 };
 
 export default Prezzo;
+

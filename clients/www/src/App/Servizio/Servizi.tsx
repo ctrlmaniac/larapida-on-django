@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from "@mui/material";
-import ProdottoWidget from "App/Prodotto/Widget";
-import { useAppSelector } from "hooks";
+import ProdottoWidget from "~/App/Prodotto/Widget";
+import { useAppSelector } from "~/hooks";
 import { filter } from "lodash";
 import React from "react";
 
@@ -42,3 +42,4 @@ const Servizi: React.FC = () => {
 };
 
 export default Servizi;
+

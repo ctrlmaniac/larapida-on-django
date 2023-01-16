@@ -1,5 +1,5 @@
 import React from "react";
-import { Page } from "Components";
+import { Page } from "~/Components";
 import {
   Container,
   Box,
@@ -58,3 +58,4 @@ const Privacy: React.FC = () => {
 };
 
 export default Privacy;
+

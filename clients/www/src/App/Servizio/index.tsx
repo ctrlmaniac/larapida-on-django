@@ -2,16 +2,16 @@ import React from "react";
 import { isEmpty, find } from "lodash";
 import { useParams } from "react-router-dom";
 import { Box, Container, Typography } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "hooks";
-import list from "features/prodotti/list";
+import { useAppDispatch, useAppSelector } from "~/hooks";
+import list from "~/features/prodotti/list";
 import {
   ErrorScreen,
   Header,
   LoadingScreen,
   Jumbotron,
   Page,
-} from "Components";
-import NotFound from "App/NotFound";
+} from "~/Components";
+import NotFound from "~/App/NotFound";
 import Servizi from "./Servizi";
 import Prodotti from "./Prodotti";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -46,7 +46,7 @@ const Servizio: React.FC = () => {
         return <ErrorScreen>C'è stato un problema...</ErrorScreen>;
       } else {
         if (isEmpty(categorie.list)) {
-          return <ErrorScreen>C'è stato un problema...</ErrorScreen>;
+          return <NotFound />;
         } else {
           let categoria = find(categorie.list, function (o) {
             return o.url === servizio;

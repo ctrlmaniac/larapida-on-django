@@ -1,5 +1,5 @@
-import api, { Endpoints } from "api";
-import { AppThunk } from "store";
+import api, { Endpoints } from "~/api";
+import { AppThunk } from "~/store";
 import { listFail, listSuccess } from "./slice";
 
 export default function list(q: {} = {}): AppThunk {
@@ -23,3 +23,4 @@ export default function list(q: {} = {}): AppThunk {
       });
   };
 }
+

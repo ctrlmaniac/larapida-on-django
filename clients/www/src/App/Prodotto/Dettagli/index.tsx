@@ -1,9 +1,9 @@
-import { Typography, Container, Link } from "@mui/material";
-import { Header, Page } from "Components";
-import { useAppSelector } from "hooks";
-import { find } from "lodash";
-import { Prodotto } from "models";
 import React from "react";
+import { Typography, Container, Link } from "@mui/material";
+import { Header, Page } from "~/Components";
+import { useAppSelector } from "~/hooks";
+import { find } from "lodash";
+import { Prodotto } from "~/models";
 import ReactMarkdown from "react-markdown";
 import Prezzo from "../Prezzo";
 import Immagini from "./Immagini";

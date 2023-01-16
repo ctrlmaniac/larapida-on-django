@@ -60,7 +60,9 @@ ROOT_URLCONF = "webapp.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            BASE_DIR / "clients/templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -123,6 +125,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = ROOT_DIR / "data/static"
+STATICFILES_DIRS = [
+    BASE_DIR / "clients/static",
+]
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = ROOT_DIR / "data/media"

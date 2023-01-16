@@ -134,3 +134,6 @@ data/
 
 # Node
 node_modules/
+
+# Static and Templates files
+webapp/clients

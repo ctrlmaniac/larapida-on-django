@@ -1,8 +1,8 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { categorieSlice } from "features/categorie/slice";
-import { negozioOrariSlice } from "features/negozioOrari/slice";
-import { negozioOrariSpecialiSlice } from "features/negozioOrariSpeciali/slice";
-import { prodottoSlice } from "features/prodotti/slice";
+import { categorieSlice } from "./features/categorie/slice";
+import { negozioOrariSlice } from "./features/negozioOrari/slice";
+import { negozioOrariSpecialiSlice } from "./features/negozioOrariSpeciali/slice";
+import { prodottoSlice } from "./features/prodotti/slice";
 import logger from "redux-logger";
 
 export const store = configureStore({
@@ -26,3 +26,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+

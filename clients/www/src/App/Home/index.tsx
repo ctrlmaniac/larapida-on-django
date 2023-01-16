@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Container, Typography, Button, Paper } from "@mui/material";
 import Servizi from "./Servizi";
+import moodWallpaper from "~/assets/wallpapers/mood.jpg";
 
 const Home: React.FC = () => {
   return (
@@ -12,8 +13,7 @@ const Home: React.FC = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundImage:
-            "url('" + process.env.PUBLIC_URL + "/static/wallpapers/mood.jpg')",
+          backgroundImage: `url('${moodWallpaper}')`,
         }}
       >
         <Container maxWidth="md">

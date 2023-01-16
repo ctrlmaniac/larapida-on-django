@@ -1,8 +1,8 @@
-import { LoadingScreen } from "Components";
-import list from "features/categorie/list";
-import listOrari from "features/negozioOrari/list";
-import listOrariSpeciali from "features/negozioOrariSpeciali/list";
-import { useAppDispatch } from "hooks";
+import { LoadingScreen } from "../Components";
+import list from "../features/categorie/list";
+import listOrari from "../features/negozioOrari/list";
+import listOrariSpeciali from "../features/negozioOrariSpeciali/list";
+import { useAppDispatch } from "../hooks";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -73,3 +73,4 @@ const App: React.FC = () => {
 };
 
 export default App;
+

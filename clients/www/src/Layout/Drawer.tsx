@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppSelector } from "hooks";
+import { useAppSelector } from "~/hooks";
 import { isEmpty } from "lodash";
 import { useNavigate } from "react-router-dom";
 import {
@@ -109,3 +109,4 @@ const DrawerContent: React.FC<Props> = ({ handleClose }) => {
 };
 
 export default DrawerContent;
+

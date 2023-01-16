@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { Prodotto } from "models";
+import type { Prodotto } from "~/models";
 
 interface ProdottoState {
   listing: boolean;
@@ -49,3 +49,4 @@ export const prodottoSlice = createSlice({
 export const { listSuccess, listFail } = prodottoSlice.actions;
 
 export default prodottoSlice.reducer;
+

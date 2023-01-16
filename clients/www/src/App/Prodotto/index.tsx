@@ -1,10 +1,10 @@
 import React from "react";
-import NotFound from "App/NotFound";
-import { ErrorScreen, LoadingScreen } from "Components";
-import { useAppDispatch, useAppSelector } from "hooks";
+import NotFound from "~/App/NotFound";
+import { ErrorScreen, LoadingScreen } from "~/Components";
+import { useAppDispatch, useAppSelector } from "~/hooks";
 import { useParams } from "react-router-dom";
 import Dettagli from "./Dettagli";
-import list from "features/prodotti/list";
+import list from "~/features/prodotti/list";
 
 export default function Prodotto() {
   const dispatch = useAppDispatch();
@@ -39,3 +39,4 @@ export default function Prodotto() {
     }
   }
 }
+

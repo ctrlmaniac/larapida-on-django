@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - uses: bahmutov/npm-install@v1
+      - run: npm run collectclients
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -27,6 +30,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: .
           push: true
           tags: ctrlmaniac/larapida:latest
 

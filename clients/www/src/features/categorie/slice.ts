@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { Categoria } from "models";
+import type { Categoria } from "~/models";
 
 interface CategorieState {
   listing: boolean;
@@ -33,3 +33,4 @@ export const categorieSlice = createSlice({
 export const { listSuccess, listFail } = categorieSlice.actions;
 
 export default categorieSlice.reducer;
+

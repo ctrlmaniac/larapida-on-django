@@ -2,7 +2,8 @@ import React from "react";
 import { Button, Typography } from "@mui/material";
 import { Container, Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
-import { Page } from "Components";
+import { Page } from "~/Components";
+import AnimationNotFound from "~/assets/animations/not-found.gif";
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const NotFound: React.FC = () => {
         <Box sx={{ textAlign: "center" }}>
           <img
             alt="pagina non trovata"
-            src={process.env.PUBLIC_URL + "/static/animations/not-found.gif"}
+            src={AnimationNotFound}
             style={{ maxWidth: "100%" }}
             width={450}
             height="auto"
