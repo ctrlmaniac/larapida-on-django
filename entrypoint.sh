@@ -13,6 +13,6 @@ fi
 
 cd /home/webapp
 
-poetry run python manage.py collectstatic --no-input --clear
-poetry run python manage.py migrate
-poetry run gunicorn -w 2 -b :8000 webapp.wsgi:application
+/root/.local/bin/poetry run python manage.py collectstatic --no-input --clear
+/root/.local/bin/poetry run python manage.py migrate
+/root/.local/bin/poetry run gunicorn -w 2 -b :8000 webapp.wsgi:application
