@@ -5,6 +5,7 @@ WORKDIR /home
 RUN apk add curl 
 
 RUN curl -sSL https://install.python-poetry.org | python3 -
+RUN export PATH="/root/.local/bin:$PATH
 
 # Configure Poetry
 RUN poetry config virtualenvs.in-project true
