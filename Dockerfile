@@ -2,18 +2,7 @@ FROM python:3.10-alpine
 
 WORKDIR /home
 
-RUN apk add \
-    curl \
-    gcc \
-    libressl-dev \
-    musl-dev \
-    libffi-dev \
-    postgresql-dev \
-    python3-dev
-
-# Install poetry
-RUN pip install -U pip setuptools
-RUN pip install poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Configure Poetry
 RUN poetry config virtualenvs.in-project true
