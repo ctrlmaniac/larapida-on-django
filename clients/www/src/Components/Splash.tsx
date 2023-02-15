@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 interface Props {
   children: JSX.Element | null;
-  sx: any;
+  sx?: any;
 }
 
 const Splash: React.FC<Props> = (props) => {
