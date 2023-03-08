@@ -6,4 +6,9 @@ class WarehouseConfig(AppConfig):
     name = "warehouse"
 
     def ready(self) -> None:
-        from .signals import wallpapers_delete, wallpapers_categories
+        from .signals import (
+            wallpapers_delete,
+            wallpapers_categories,
+            product_files_delete,
+            product_files_check,
+        )
