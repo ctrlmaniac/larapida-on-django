@@ -1,6 +1,14 @@
+import os
+import uuid
 from django.db import models
 
-from utils.updirs import wallpapers_category
+from utils.constants.updirs import WALLPAPERS_CATEGORIES_DIR
+
+
+def wallpapers_categories(instance, filename):
+    ext = filename.split(".")[-1]
+    filename = "%s.%s" % (uuid.uuid4(), ext)
+    return os.path.join(f"{WALLPAPERS_CATEGORIES_DIR}/", filename)
 
 
 class Category(models.Model):
@@ -12,7 +20,9 @@ class Category(models.Model):
 
     description = models.TextField(blank=True)
 
-    wallpaper = models.ImageField(blank=True, upload_to=wallpapers_category)
+    wallpaper = models.ImageField(
+        blank=True, null=True, default=None, upload_to=wallpapers_categories
+    )
 
     def __str__(self) -> str:
         return self.name

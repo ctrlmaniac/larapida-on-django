@@ -1,1 +1,1 @@
-WALLPAPERS_CATEGORIA_DIR = "wallpapers/categorie"
+WALLPAPERS_CATEGORIES_DIR = "wallpapers/categories"

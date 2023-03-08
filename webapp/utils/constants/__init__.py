@@ -1,7 +1,7 @@
 from .socials import SOCIALS
-from .updirs import WALLPAPERS_CATEGORIA_DIR
+from .updirs import WALLPAPERS_CATEGORIES_DIR
 
 __all__ = [
     "SOCIALS",
-    "WALLPAPERS_CATEGORIA_DIR",
+    "WALLPAPERS_CATEGORIES_DIR",
 ]
