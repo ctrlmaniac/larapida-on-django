@@ -1,7 +1,10 @@
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
-import Home from "./pages/Home";
-import Privacy from "./pages/Privacy";
+import { LoadingScreen } from "./components";
+
+const Home = lazy(() => import("~/pages/Home"));
+const Privacy = lazy(() => import("~/pages/Privacy"));
 
 export default createBrowserRouter([
   {
@@ -10,11 +13,19 @@ export default createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "/privacy",
-        element: <Privacy />,
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Privacy />
+          </Suspense>
+        ),
       },
     ],
   },
