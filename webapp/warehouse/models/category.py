@@ -24,6 +24,10 @@ class Category(models.Model):
         blank=True, null=True, default=None, upload_to=wallpapers_categories
     )
 
+    show_online = models.BooleanField(
+        default=True, help_text="Whether to show or not this category on the website"
+    )
+
     def __str__(self) -> str:
         return self.name
 
