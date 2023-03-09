@@ -10,6 +10,7 @@ router = routers.DefaultRouter()
 router.register(r"business", BusinessViewSet)
 router.register(r"stores", StoreViewSet)
 router.register(r"categories", warehouse.CategoryViewSet)
+router.register(r"products", warehouse.ProductViewSet)
 
 
 urlpatterns = [

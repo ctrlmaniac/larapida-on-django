@@ -12,5 +12,5 @@ def products_media_dir(instance, filename):
 
 
 class ProductMedia(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="media")
     media = models.ImageField(upload_to=products_media_dir)
