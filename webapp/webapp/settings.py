@@ -13,7 +13,16 @@ SECRET_KEY = os.getenv(
 DEBUG = os.getenv("DEBUG", True)
 PRODUCTION = os.getenv("PRODUCTION", False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "larapidamolinetto.com",
+    "127.0.0.1",
+    "localhost",
+]
+
+CSRF_TRUSTED_ORIGIN = [
+    "https://larapidamolinetto.com",
+    "https://*.127.0.0.1",
+]
 
 
 # Application definition
@@ -25,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     "rest_framework",
     "api",
     "utils",
@@ -35,6 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",

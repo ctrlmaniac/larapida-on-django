@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "http://localhost:8000/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -15,6 +16,7 @@
     "@reduxjs/toolkit": "^1.9.3",
     "@tabler/icons-react": "^2.9.0",
     "axios": "^1.3.4",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -23,6 +25,7 @@
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",

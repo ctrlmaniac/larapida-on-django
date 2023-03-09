@@ -9,8 +9,11 @@ import {
 } from "@mui/material";
 import main from "~/assets/wallpapers/main.webp";
 import { logoTheme } from "~/components/theme";
+import { useAppSelector } from "~/hooks";
 
 const Home: React.FC = () => {
+  const { details } = useAppSelector((state) => state.businessPrincipal);
+
   return (
     <>
       <Wallpaper image={main}>
@@ -24,7 +27,7 @@ const Home: React.FC = () => {
                   color="white"
                   gutterBottom
                 >
-                  La Rapida
+                  {details?.display_name}
                 </Typography>
               </ThemeProvider>
               <Typography variant="h6" color="white">
