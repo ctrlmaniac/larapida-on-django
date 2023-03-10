@@ -105,7 +105,9 @@ const Root: React.FC = () => {
 
           <Sidebar open={open} onClose={setOpen} />
 
-          <Outlet />
+          <Box sx={{ minHeight: "100vh" }}>
+            <Outlet />
+          </Box>
 
           <Box
             sx={{ backgroundColor: "#0d1b1e", color: "#f5f3f4" }}
