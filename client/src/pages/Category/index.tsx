@@ -115,7 +115,7 @@ const Category: React.FC = () => {
       <>
         {!isEmpty(category?.wallpaper) && (
           <Wallpaper image={category?.wallpaper!}>
-            <Box sx={{ height: 200 }} />
+            <Box sx={{ height: "40vh" }} />
           </Wallpaper>
         )}
         <Box mt={10}>
