@@ -18,6 +18,18 @@ export const defaultTheme = createTheme({
   },
 });
 
+export const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    background: {
+      default: "#0d1b1e",
+    },
+    text: {
+      primary: "#f5f3f4",
+    },
+  },
+});
+
 export const logoTheme = createTheme({
   typography: {
     fontFamily: ["Mrs Sheppards", "cursive"].join(","),

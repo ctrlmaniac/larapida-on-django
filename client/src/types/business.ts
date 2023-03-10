@@ -7,4 +7,8 @@ export default interface Business {
   fax: string;
   mobile: string;
   email: string;
+  socials: {
+    social: string;
+    content: string;
+  }[];
 }
