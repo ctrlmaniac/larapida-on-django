@@ -1,10 +1,8 @@
-export default interface Business {
+export default interface Store {
   id: number;
   name: string;
-  display_name: string;
   address: string;
   phone: string;
   fax: string;
   mobile: string;
-  email: string;
 }

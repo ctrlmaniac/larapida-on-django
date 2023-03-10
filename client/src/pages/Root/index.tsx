@@ -14,6 +14,7 @@ import get from "~/features/business/principal/get";
 import { LoadingScreen, Splash } from "~/components";
 import Sidebar from "./Sidebar";
 import list from "~/features/categories/list";
+import listStores from "~/features/stores/list";
 
 const Root: React.FC = () => {
   const navigate = useNavigate();
@@ -27,25 +28,27 @@ const Root: React.FC = () => {
     listError,
     response: categoryResponse,
   } = useAppSelector((state) => state.categories);
+  const {
+    listing: storelisting,
+    listError: storelisterror,
+    response: storeresponse,
+  } = useAppSelector((state) => state.stores);
 
   React.useEffect(() => {
     dispatch(get());
     dispatch(list());
+    dispatch(listStores());
   }, []);
 
-  if (getting || listing) {
+  if (getting || listing || storelisting) {
     return <LoadingScreen />;
   } else {
-    if (getError || listError) {
+    if (getError || listError || storelisterror) {
       return (
         <Splash>
           <Box>
             <Typography variant="h3">La Rapida Molinetto</Typography>
-            <Typography>
-              {response ||
-                categoryResponse ||
-                "Errore di caricamento, riprova più tardi!"}
-            </Typography>
+            <Typography>"Errore di caricamento, riprova più tardi!"</Typography>
           </Box>
         </Splash>
       );

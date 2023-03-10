@@ -44,6 +44,14 @@ const Sidebar: React.FC<Props> = ({ open, onClose }) => {
           <ListItemButton onClick={() => to("/")}>
             <ListItemText primary="Home" />
           </ListItemButton>
+
+          <ListItemButton onClick={() => to("/contatti")}>
+            <ListItemText primary="Contatti" />
+          </ListItemButton>
+
+          <ListItemButton onClick={() => to("/privacy")}>
+            <ListItemText primary="Privacy" />
+          </ListItemButton>
         </List>
         <Divider />
 

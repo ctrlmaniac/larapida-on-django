@@ -15,9 +15,10 @@ class Business(models.Model):
         help_text="The full address of the business including city, zip and country",
     )
 
-    phone = models.CharField(max_length=10, default=None, null=True, blank=True)
-    fax = models.CharField(max_length=10, default=None, null=True, blank=True)
-    mobile = models.CharField(max_length=10, default=None, null=True, blank=True)
+    phone = models.CharField(max_length=15, default=None, null=True, blank=True)
+    fax = models.CharField(max_length=15, default=None, null=True, blank=True)
+    mobile = models.CharField(max_length=15, default=None, null=True, blank=True)
+    email = models.CharField(max_length=50, default=None, null=True, blank=True)
 
     def __str__(self) -> str:
         return self.name

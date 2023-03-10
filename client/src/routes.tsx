@@ -5,6 +5,7 @@ import { LoadingScreen } from "./components";
 
 const NotFound = lazy(() => import("~/pages/NotFound"));
 const Home = lazy(() => import("~/pages/Home"));
+const Contacts = lazy(() => import("~/pages/Contacts"));
 const Privacy = lazy(() => import("~/pages/Privacy"));
 const Category = lazy(() => import("~/pages/Category"));
 const Product = lazy(() => import("~/pages/Product"));
@@ -27,6 +28,14 @@ export default createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingScreen />}>
             <Privacy />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contatti",
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Contacts />
           </Suspense>
         ),
       },
