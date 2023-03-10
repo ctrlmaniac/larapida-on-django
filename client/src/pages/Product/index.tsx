@@ -17,7 +17,7 @@ import NotFound from "../NotFound";
 import ReactMarkdown from "react-markdown";
 
 const Product: React.FC = () => {
-  const { category, product } = useParams();
+  const { product } = useParams();
   const dispatch = useAppDispatch();
   const { details, getting, getError, response } = useAppSelector(
     (state) => state.products
@@ -41,8 +41,6 @@ const Product: React.FC = () => {
         </Splash>
       );
     } else {
-      console.log(details);
-
       if (isEmpty(details)) {
         return <NotFound />;
       } else {
@@ -95,7 +93,7 @@ const Product: React.FC = () => {
                     </Typography>
                   </Grid>
 
-                  {!isEmpty(details.media) && (
+                  {isEmpty(details.media) && (
                     <Grid item xs={12} sm={6}>
                       <Box
                         sx={{

@@ -7,7 +7,7 @@ export default function get(url: string): AppThunk {
     dispatch(getStart());
 
     api
-      .get(`${Endpoints.PRODUCTS}${url}`)
+      .get(`${Endpoints.PRODUCTS}${url}/`)
       .then((response) => {
         dispatch(getSuccess(response.data));
       })

@@ -169,7 +169,7 @@ const Root: React.FC = () => {
                 container
                 direction="row"
                 justifyContent="center"
-                alignItems="center"
+                alignItems="flex-start"
                 spacing={2}
               >
                 <Grid item xs={12} sm={6}>
