@@ -36,7 +36,7 @@ const Category: React.FC = () => {
     if (!isEmpty(category)) {
       dispatch(list(`category=${category.id}&show_online=true`));
     }
-  }, []);
+  }, [category]);
 
   // Products
   let productsContent = <LoadingCards />;

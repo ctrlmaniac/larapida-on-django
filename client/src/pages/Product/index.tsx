@@ -27,7 +27,7 @@ const Product: React.FC = () => {
     if (!isEmpty(product)) {
       dispatch(get(product!));
     }
-  }, []);
+  }, [product]);
 
   if (getting) {
     return <LoadingScreen />;
