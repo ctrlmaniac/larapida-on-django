@@ -10,6 +10,7 @@ import {
 import main from "~/assets/wallpapers/main.webp";
 import { logoTheme } from "~/components/theme";
 import { useAppSelector } from "~/hooks";
+import Categories from "./Categories";
 
 const Home: React.FC = () => {
   const { details } = useAppSelector((state) => state.businessPrincipal);
@@ -36,7 +37,7 @@ const Home: React.FC = () => {
               </Typography>
 
               <Box mt={2}>
-                <Button variant="contained">
+                <Button variant="contained" href="#servizi">
                   Scopri tutti i nostri servizi
                 </Button>
               </Box>
@@ -44,6 +45,12 @@ const Home: React.FC = () => {
           </Splash>
         </Box>
       </Wallpaper>
+
+      <div id="servizi">
+        <Box my={6}>
+          <Categories />
+        </Box>
+      </div>
     </>
   );
 };
