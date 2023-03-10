@@ -12,28 +12,40 @@ import { IconMenu2 } from "@tabler/icons-react";
 import { useAppDispatch, useAppSelector } from "~/hooks";
 import get from "~/features/business/principal/get";
 import { LoadingScreen, Splash } from "~/components";
-import { isEmpty } from "lodash";
+import Sidebar from "./Sidebar";
+import list from "~/features/categories/list";
 
 const Root: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { getting, getError, details } = useAppSelector(
+  const [open, setOpen] = React.useState(false);
+  const { getting, getError, details, response } = useAppSelector(
     (state) => state.businessPrincipal
   );
+  const {
+    listing,
+    listError,
+    response: categoryResponse,
+  } = useAppSelector((state) => state.categories);
 
   React.useEffect(() => {
     dispatch(get());
+    dispatch(list());
   }, []);
 
-  if (getting) {
+  if (getting || listing) {
     return <LoadingScreen />;
   } else {
-    if (!isEmpty(getError)) {
+    if (getError || listError) {
       return (
         <Splash>
           <Box>
             <Typography variant="h3">La Rapida Molinetto</Typography>
-            <Typography>{getError}</Typography>
+            <Typography>
+              {response ||
+                categoryResponse ||
+                "Errore di caricamento, riprova più tardi!"}
+            </Typography>
           </Box>
         </Splash>
       );
@@ -62,11 +74,13 @@ const Root: React.FC = () => {
               <Typography variant="h6" sx={{ flexGrow: 1 }}>
                 {details?.display_name}
               </Typography>
-              <IconButton color="primary">
+              <IconButton color="primary" onClick={() => setOpen(true)}>
                 <IconMenu2 />
               </IconButton>
             </Toolbar>
           </AppBar>
+
+          <Sidebar open={open} onClose={setOpen} />
 
           <Outlet />
         </>

@@ -2,15 +2,17 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Business } from "~/types";
 
 interface State {
-  getting: boolean;
-  getError?: string;
+  response?: string;
   details?: Business;
+  getting: boolean;
+  getError: boolean;
 }
 
 const initialState: State = {
-  getting: false,
-  getError: undefined,
+  response: undefined,
   details: undefined,
+  getting: false,
+  getError: false,
 };
 
 export const businessPrincipalSlice = createSlice({
@@ -22,12 +24,14 @@ export const businessPrincipalSlice = createSlice({
     },
     getSuccess: (state, action: PayloadAction<Business>) => {
       state.details = action.payload;
-      state.getError = undefined;
+      state.getError = false;
       state.getting = false;
+      state.response = undefined;
     },
     getFail: (state, action: PayloadAction<string>) => {
       state.details = undefined;
-      state.getError = action.payload;
+      state.response = action.payload;
+      state.getError = true;
       state.getting = false;
     },
   },
