@@ -5,8 +5,8 @@ services:
     image: ctrlmaniac/larapida:latest
     entrypoint: /home/entrypoint.sh
     volumes:
-      - ./data/media:/home/public/media
-      - ./data/static:/home/public/static
+      - ./data/media:/home/media
+      - ./data/static:/home/static
     ports:
       - "8000:8000"
     depends_on:
