@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 interface Props {
-  children: JSX.Element | null;
+  children: any;
 }
 
-const NavigationScroll: React.FC<Props> = (props) => {
+const NavigationScroll: React.FC<Props> = ({ children }) => {
   const location = useLocation();
   const { pathname } = location;
 
@@ -17,7 +17,7 @@ const NavigationScroll: React.FC<Props> = (props) => {
     });
   }, [pathname]);
 
-  return props.children || null;
+  return children;
 };
 
 export default NavigationScroll;
