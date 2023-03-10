@@ -24,7 +24,7 @@ import {
 } from "@tabler/icons-react";
 import { useAppDispatch, useAppSelector } from "~/hooks";
 import get from "~/features/business/principal/get";
-import { LoadingScreen, Splash } from "~/components";
+import { LoadingScreen, NavigationScroll, Splash } from "~/components";
 import Sidebar from "./Sidebar";
 import list from "~/features/categories/list";
 import listStores from "~/features/stores/list";
@@ -70,7 +70,7 @@ const Root: React.FC = () => {
       );
     } else {
       return (
-        <>
+        <NavigationScroll>
           <AppBar
             color="inherit"
             position="fixed"
@@ -207,7 +207,7 @@ const Root: React.FC = () => {
               </Grid>
             </Container>
           </Box>
-        </>
+        </NavigationScroll>
       );
     }
   }
