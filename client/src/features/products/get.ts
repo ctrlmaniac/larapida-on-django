@@ -2,12 +2,12 @@ import api, { Endpoints } from "~/api";
 import { AppThunk } from "~/store";
 import { getStart, getSuccess, getFail } from "./slice";
 
-export default function get(id: number): AppThunk {
+export default function get(url: string): AppThunk {
   return async (dispatch) => {
     dispatch(getStart());
 
     api
-      .get(`${Endpoints.PRODUCTS}${id}`)
+      .get(`${Endpoints.PRODUCTS}${url}`)
       .then((response) => {
         dispatch(getSuccess(response.data));
       })

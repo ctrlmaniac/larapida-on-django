@@ -7,6 +7,7 @@ const NotFound = lazy(() => import("~/pages/NotFound"));
 const Home = lazy(() => import("~/pages/Home"));
 const Privacy = lazy(() => import("~/pages/Privacy"));
 const Category = lazy(() => import("~/pages/Category"));
+const Product = lazy(() => import("~/pages/Product"));
 
 export default createBrowserRouter([
   {
@@ -34,6 +35,14 @@ export default createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingScreen />}>
             <Category />
+          </Suspense>
+        ),
+      },
+      {
+        path: ":category/:product",
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Product />
           </Suspense>
         ),
       },

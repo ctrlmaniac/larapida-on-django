@@ -9,3 +9,6 @@ class ProductVariant(models.Model):
         Product, on_delete=models.CASCADE, related_name="variants"
     )
     attribute = models.ForeignKey(ProductAttributeValue, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.attribute.value

@@ -1,11 +1,19 @@
 from rest_framework import serializers
 
 from .category import ShortCategorySerializer
-from ..models import ProductVariant, ProductMedia, Product
+from ..models import ProductAttributeValue, ProductVariant, ProductMedia, Product
+
+
+class ProductAttributeSerializer(serializers.ModelSerializer):
+    attribute = serializers.StringRelatedField(many=False, read_only=True)
+
+    class Meta:
+        model = ProductAttributeValue
+        fields = ["attribute", "value"]
 
 
 class ProductVariantSerialzer(serializers.ModelSerializer):
-    attribute = serializers.StringRelatedField(read_only=True)
+    attribute = ProductAttributeSerializer(many=False, read_only=True)
 
     class Meta:
         model = ProductVariant
@@ -26,3 +34,4 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+        lookup_field = "url"
