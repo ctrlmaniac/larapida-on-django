@@ -5,6 +5,7 @@ import { LoadingScreen } from "./components";
 
 const Home = lazy(() => import("~/pages/Home"));
 const Privacy = lazy(() => import("~/pages/Privacy"));
+const Category = lazy(() => import("~/pages/Category"));
 
 export default createBrowserRouter([
   {
@@ -24,6 +25,14 @@ export default createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingScreen />}>
             <Privacy />
+          </Suspense>
+        ),
+      },
+      {
+        path: ":category",
+        element: (
+          <Suspense fallback={<LoadingScreen />}>
+            <Category />
           </Suspense>
         ),
       },

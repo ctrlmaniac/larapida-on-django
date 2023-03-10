@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 
 interface Props {
   image: string;
-  children: JSX.Element;
+  children?: JSX.Element;
 }
 
 const Wallpaper: React.FC<Props> = (props) => {
