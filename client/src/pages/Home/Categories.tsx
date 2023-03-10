@@ -25,6 +25,7 @@ const Categories: React.FC = () => {
         direction="row"
         justifyContent="center"
         alignItems="stretch"
+        spacing={2}
       >
         {filter(categories, "show_online").map((cat) => (
           <Grid key={cat.id} item xs={12} sm={3} md={4}>
