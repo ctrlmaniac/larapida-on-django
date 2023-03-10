@@ -24,6 +24,12 @@ CSRF_TRUSTED_ORIGIN = [
     "https://*.127.0.0.1",
 ]
 
+if PRODUCTION:
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+
 
 # Application definition
 
