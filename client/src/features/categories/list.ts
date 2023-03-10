@@ -12,7 +12,6 @@ export default function list(): AppThunk {
         dispatch(listSuccess(response.data));
       })
       .catch((error) => {
-        console.log(error);
         let message = "Errore";
 
         if (error.response) {

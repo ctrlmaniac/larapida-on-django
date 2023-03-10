@@ -12,7 +12,6 @@ export default function get(): AppThunk {
         dispatch(getSuccess(response.data));
       })
       .catch((error) => {
-        console.log(error);
         let message = "Errore";
 
         if (error.response) {

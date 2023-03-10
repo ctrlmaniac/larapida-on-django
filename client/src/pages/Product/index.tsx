@@ -35,10 +35,14 @@ const Product: React.FC = () => {
     if (getError) {
       return (
         <Splash>
-          <Typography>{response || "Errore di caricamento"}</Typography>
+          <Typography variant="h6">
+            Impossibile caricare prodotto o prodotto non trovato!
+          </Typography>
         </Splash>
       );
     } else {
+      console.log(details);
+
       if (isEmpty(details)) {
         return <NotFound />;
       } else {
