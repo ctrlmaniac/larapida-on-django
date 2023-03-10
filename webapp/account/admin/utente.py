@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from ..forms import UtenteChangeForm, UtenteCreationForm
-from ..models import Utente
+from ..forms import AccountChangeForm, AccountCreationForm
+from ..models import Account
 
 
-@admin.register(Utente)
-class UtenteAdmin(UserAdmin):
-    add_form = UtenteCreationForm
-    form = UtenteChangeForm
+@admin.register(Account)
+class AccountAdmin(UserAdmin):
+    add_form = AccountCreationForm
+    form = AccountChangeForm
     search_fields = ("email",)
     ordering = ("email",)
     list_display = (

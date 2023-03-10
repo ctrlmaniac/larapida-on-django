@@ -1,5 +1,5 @@
-from .utente import Utente
+from .account import Account
 
 __all__ = [
-    "Utente",
+    "Account",
 ]

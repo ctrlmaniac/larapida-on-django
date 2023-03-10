@@ -2,11 +2,11 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinLengthValidator
 from django.db import models
 
-from ..managers import UtenteManager
+from ..managers import AccountManager
 
 
-class Utente(AbstractUser):
-    objects = UtenteManager()
+class Account(AbstractUser):
+    objects = AccountManager()
 
     username = None
     first_name = None
@@ -34,5 +34,5 @@ class Utente(AbstractUser):
         return self.email
 
     class Meta:
-        verbose_name = "Utente"
+        verbose_name = "Account"
         verbose_name_plural = "Utenti"

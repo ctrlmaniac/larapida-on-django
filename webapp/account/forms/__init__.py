@@ -1,6 +1,6 @@
-from .utente import UtenteChangeForm, UtenteCreationForm
+from .utente import AccountChangeForm, AccountCreationForm
 
 __all__ = [
-    "UtenteCreationForm",
-    "UtenteChangeForm",
+    "AccountCreationForm",
+    "AccountChangeForm",
 ]
