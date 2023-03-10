@@ -89,9 +89,9 @@ If you're using docker:
 and then:
 
 ```
-from account.models import Utente
+from account.models import Account
 
-user = Utente.objects.get(email="youremail@example.com")
+user = Account.objects.get(email="youremail@example.com")
 
 user.is_admin = True
 
