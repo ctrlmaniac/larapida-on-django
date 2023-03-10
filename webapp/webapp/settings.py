@@ -3,15 +3,15 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-ROOT_DIR = os.getenv("ROOT_DIR", BASE_DIR.parent)
+ROOT_DIR = os.environ.get("ROOT_DIR", BASE_DIR.parent)
 
 
-SECRET_KEY = os.getenv(
+SECRET_KEY = os.environ.get(
     "SECRET_KEY", "ih=szoge^mhre4#qu+0gn)=$qp_iw0l&+j0ks#+e(z@6le80r@"
 )
 
-DEBUG = os.getenv("DEBUG", True)
-PRODUCTION = os.getenv("PRODUCTION", False)
+DEBUG = os.environ.get("DEBUG", True)
+PRODUCTION = os.environ.get("PRODUCTION", False)
 
 ALLOWED_HOSTS = [
     "larapidamolinetto.com",
@@ -81,13 +81,24 @@ WSGI_APPLICATION = "webapp.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": ROOT_DIR / "db.sqlite3",
+if not PRODUCTION:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ROOT_DIR / "db.sqlite3",
+        }
     }
-}
-
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.environ.get("DB_NAME"),
+            "USER": os.environ.get("DB_USER"),
+            "PASSWORD": os.environ.get("DB_PASSWORD"),
+            "HOST": "postgres",
+            "PORT": "5432",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
