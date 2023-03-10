@@ -34,10 +34,10 @@ export default defineConfig(({ command }) => {
               if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
                 extType = "img";
               }
-              return `static/www/${extType}/[name]-[hash][extname]`;
+              return `static/client/${extType}/[name]-[hash][extname]`;
             },
-            chunkFileNames: "static/www/js/[name]-[hash].js",
-            entryFileNames: "static/www/js/[name]-[hash].js",
+            chunkFileNames: "static/client/js/[name]-[hash].js",
+            entryFileNames: "static/client/js/[name]-[hash].js",
           },
         },
       },

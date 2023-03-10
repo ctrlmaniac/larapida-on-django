@@ -6,3 +6,6 @@ data/
 *.sqlite*
 
 node_modules/
+
+webapp/client/static/client/
+webapp/client/templates/client/

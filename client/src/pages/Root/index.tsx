@@ -85,7 +85,7 @@ const Root: React.FC = () => {
             <Toolbar sx={{ paddingLeft: "0 !important" }}>
               <Avatar
                 onClick={() => navigate("/")}
-                src="/static/www/logo.png"
+                src="/static/client/logo.png"
                 alt={details?.display_name}
                 sx={{
                   width: 64,

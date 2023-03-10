@@ -1,0 +1,10 @@
+#!/bin/sh
+
+rm -rf webapp/client/static/client
+rm -rf webapp/client/templates/client
+
+mkdir webapp/client/static/client
+mkdir webapp/client/templates/client
+
+cp -a client/dist/index.html webapp/client/templates/client/index.html
+cp -a client/dist/static/client webapp/client/static/

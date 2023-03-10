@@ -6,5 +6,10 @@
   ],
   "devDependencies": {
     "lerna": "^6.5.1"
+  },
+  "scripts": {
+    "collectclient": "bash collectclient",
+    "precollectclient": "npx lerna exec -- npm run build",
+    "runserver": "poetry run python webapp/manage.py runserver"
   }
 }
