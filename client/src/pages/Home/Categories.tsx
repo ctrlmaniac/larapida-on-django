@@ -10,11 +10,12 @@ import {
   CardMedia,
   Container,
   Grid,
-  Paper,
   Typography,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Categories: React.FC = () => {
+  const navigate = useNavigate();
   const { list: categories } = useAppSelector((state) => state.categories);
 
   return (
@@ -42,7 +43,9 @@ const Categories: React.FC = () => {
                 <Typography>{cat.short_description}</Typography>
               </CardContent>
               <CardActions>
-                <Button fullWidth>scopri di più</Button>
+                <Button fullWidth onClick={() => navigate(cat.url)}>
+                  scopri di più
+                </Button>
               </CardActions>
             </Card>
           </Grid>

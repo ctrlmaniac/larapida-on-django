@@ -61,15 +61,19 @@ const Root: React.FC = () => {
               right: "8px",
               left: "8px",
               width: "calc(100% - 16px)",
-              cursor: "pointer",
             }}
-            onClick={() => navigate("/")}
           >
             <Toolbar sx={{ paddingLeft: "0 !important" }}>
               <Avatar
+                onClick={() => navigate("/")}
                 src="/static/www/logo.png"
                 alt={details?.display_name}
-                sx={{ width: 64, height: 64, marginRight: 2 }}
+                sx={{
+                  width: 64,
+                  height: 64,
+                  marginRight: 2,
+                  cursor: "pointer",
+                }}
               />
               <Typography variant="h6" sx={{ flexGrow: 1 }}>
                 {details?.display_name}

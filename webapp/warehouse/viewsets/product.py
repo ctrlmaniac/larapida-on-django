@@ -7,3 +7,4 @@ from ..serializers import ProductSerializer
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all().filter(show_online=True)
     serializer_class = ProductSerializer
+    filterset_fields = ["category", "show_online"]

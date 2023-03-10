@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import { businessPrincipalSlice } from "./features/business/principal/slice";
 import { categorySlice } from "./features/categories/slice";
+import { productSlice } from "./features/products/slice";
 
 export const store = configureStore({
   reducer: {
     businessPrincipal: businessPrincipalSlice.reducer,
     categories: categorySlice.reducer,
+    products: productSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
