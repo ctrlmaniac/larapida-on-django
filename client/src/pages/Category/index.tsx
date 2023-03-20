@@ -5,7 +5,6 @@ import {
   CardMedia,
   Container,
   Grid,
-  Paper,
   Typography,
 } from "@mui/material";
 import { find, isEmpty } from "lodash";
@@ -16,7 +15,6 @@ import { useAppDispatch, useAppSelector } from "~/hooks";
 import ReactMarkdown from "react-markdown";
 import NotFound from "../NotFound";
 import list from "~/features/products/list";
-import photo from "~/assets/photo.png";
 
 const Category: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -96,10 +94,12 @@ const Category: React.FC = () => {
                     <Typography>{price}</Typography>
                   </CardContent>
                 </Box>
-                <CardMedia
-                  sx={{ height: "100%", width: 100, backgroundColor: "grey" }}
-                  image={!isEmpty(p.media) ? p.media[0].media : photo}
-                />
+                {!isEmpty(p.media) && (
+                  <CardMedia
+                    sx={{ height: "100%", width: 100 }}
+                    image={p.media[0].media}
+                  />
+                )}
               </Card>
             </Grid>
           );
