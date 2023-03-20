@@ -46,12 +46,12 @@ const Product: React.FC = () => {
       } else {
         let price = <Typography>prezzo da concordare</Typography>;
 
-        if (details.price_start_at) {
-          price = <Typography>a partire da ${details.price} €</Typography>;
-        }
-
         if (!isEmpty(details.price)) {
           price = <Typography>{details.price} €</Typography>;
+
+          if (details.price_start_at) {
+            price = <Typography>a partire da {details.price} €</Typography>;
+          }
         }
 
         if (!isEmpty(details.price_offer)) {

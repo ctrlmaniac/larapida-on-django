@@ -53,12 +53,12 @@ const Category: React.FC = () => {
         {products?.map((p) => {
           let price = <Typography>prezzo da concordare</Typography>;
 
-          if (p.price_start_at) {
-            price = <Typography>a partire da ${p.price} €</Typography>;
-          }
-
           if (!isEmpty(p.price)) {
             price = <Typography>{p.price} €</Typography>;
+
+            if (p.price_start_at) {
+              price = <Typography>a partire da {p.price} €</Typography>;
+            }
           }
 
           if (!isEmpty(p.price_offer)) {
