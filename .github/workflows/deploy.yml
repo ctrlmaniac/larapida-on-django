@@ -44,7 +44,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: ${{ secrets.REMOTE_PORT }}
-          script: docker compose down
+          script: cd ${{ secrets.REMOTE_HOME }}/larapida && docker compose down
 
       - name: Copy docker-compose.yml
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
@@ -64,7 +64,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: ${{ secrets.REMOTE_PORT }}
-          script: docker compose pull
+          script: cd ${{ secrets.REMOTE_HOME }}/larapida && docker compose pull
 
       - name: run docker compose up
         uses: appleboy/ssh-action@master
@@ -73,4 +73,4 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: ${{ secrets.REMOTE_PORT }}
-          script: docker compose up -d
+          script: cd ${{ secrets.REMOTE_HOME }}/larapida && docker compose up -d
