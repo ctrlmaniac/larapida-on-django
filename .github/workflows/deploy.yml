@@ -34,6 +34,15 @@ jobs:
           push: true
           tags: ctrlmaniac/larapida:latest
 
+      - name: run docker compose down
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          port: ${{ secrets.REMOTE_PORT }}
+          script: docker compose down
+
       - name: Copy docker-compose.yml
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -43,16 +52,7 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           sftp_only: true
           local_path: "./docker-compose.yml"
-          remote_path: ${{ secrets.REMOTE_PATH }}
-
-      - name: run docker compose down
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          password: ${{ secrets.REMOTE_PASSWORD }}
-          port: ${{ secrets.REMOTE_PORT }}
-          script: docker compose down
+          remote_path: ${{ secrets.REMOTE_HOME }}/larapida/docker-compose.yml
 
       - name: run docker compose pull
         uses: appleboy/ssh-action@master
