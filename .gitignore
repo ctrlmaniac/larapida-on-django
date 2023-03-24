@@ -1,7 +1,7 @@
 .venv/
 __pycache__/
 data/
-
+requirements.txt
 
 *.sqlite*
 

@@ -30,6 +30,18 @@ jobs:
           username: ctrlmaniac
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.40
+
+      - name: Export requirements
+        run: poetry export -f requirements.txt --output requirements.txt
+
       - name: Build and push
         uses: docker/build-push-action@v3
         with:

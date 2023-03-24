@@ -2,28 +2,12 @@ FROM python:3.11-alpine3.16
 
 WORKDIR /home
 
-RUN apk add curl 
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-RUN curl -sSL https://install.python-poetry.org | python3 -
+COPY webapp .
 
-ARG poetry=/root/.local/bin/poetry
+RUN python manage.py collectstatic --no-input --clear
+RUN python manage.py migrate
 
-# Configure Poetry
-RUN ${poetry} config virtualenvs.in-project true
-
-# Copy dependencies configuration files
-COPY poetry.lock /home/poetry.lock
-COPY pyproject.toml /home/pyproject.toml
-
-# Copy webapp
-COPY webapp /home/webapp
-
-# Install dependencies
-RUN ${poetry} install --only main
-
-RUN ${poetry} run python webapp/manage.py collectstatic --no-input --clear
-RUN ${poetry} run python webapp/manage.py migrate
-
-WORKDIR /home/webapp
-
-CMD [ "/root/.local/bin/poetry", "run", "gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
+CMD [ "gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
