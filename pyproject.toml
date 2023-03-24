@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "larapida"
-version = "4.0.19"
+version = "4.0.20"
 description = "larapida website"
 authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
 license = "UNLICENSED"
