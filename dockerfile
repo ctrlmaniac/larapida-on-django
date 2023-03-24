@@ -9,3 +9,4 @@ COPY webapp .
 COPY startup.sh .
 
 ENTRYPOINT [ "/bin/bash", "startup.sh" ]
+CMD [ "gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
