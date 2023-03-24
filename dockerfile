@@ -9,4 +9,5 @@ COPY webapp .
 
 RUN python manage.py collectstatic --noinput --clear
 
-CMD [ "python", "manage.py", "migrate", " ; ", "gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
+# CMD [ "python", "manage.py", "migrate ; gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
+CMD python manage.py migrate ; gunicorn -w 2 -b :8000 webapp.wsgi:application
