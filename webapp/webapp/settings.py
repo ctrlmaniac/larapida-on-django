@@ -15,6 +15,7 @@ PRODUCTION = os.environ.get("PRODUCTION", False)
 
 ALLOWED_HOSTS = [
     "larapidamolinetto.com",
+    os.environ.get("HOST_IP"),
     "127.0.0.1",
     "localhost",
 ]
