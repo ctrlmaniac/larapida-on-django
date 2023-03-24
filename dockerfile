@@ -7,4 +7,6 @@ RUN pip install -r requirements.txt
 
 COPY webapp .
 
-CMD [ "python", "manage.py", "collectstatic", "--noinput", "--clear", "&", "python", "manage.py", "migrate", "&", "gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
+RUN python manage.py collectstatic --noinput --clear
+
+CMD [ "python", "manage.py", "migrate; gunicorn", "-w", "2", "-b", ":8000", "webapp.wsgi:application" ]
