@@ -10,6 +10,7 @@
   "scripts": {
     "collectclient": "bash collectclient",
     "precollectclient": "npx lerna exec -- npm run build",
-    "runserver": "poetry run python webapp/manage.py runserver"
+    "runserver": "poetry run python webapp/manage.py runserver",
+    "export": "poetry export -f requirements.txt --output requirements.txt"
   }
 }
