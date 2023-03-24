@@ -21,6 +21,7 @@ COPY webapp /home/webapp
 # Install dependencies
 RUN ${poetry} install --only main
 
-COPY entrypoint.sh /home
-RUN sed -i 's/\r$//g' /home/entrypoint.sh
-RUN chmod +x /home/entrypoint.sh
+RUN ${poetry} run python webapp/manage.py collectstatic --no-input --clear
+RUN ${poetry} run python webapp/manage.py migrate
+
+CMD [ "/root/.local/bin/poetry", "run", "gunicorn", "-w", "2", "-b", ":8000", "webapp/webapp.wsgi:application" ]
