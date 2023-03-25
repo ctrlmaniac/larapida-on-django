@@ -67,11 +67,11 @@ jobs:
           port: ${{ secrets.VPS_PORT }}
           script: docker service update --image ctrlmaniac/larapida:${{ env.RELEASE_VERSION }} larapida_app
 
-      - name: run migrate
+      - name: run postinstall
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
           port: ${{ secrets.VPS_PORT }}
-          script: docker exec -ti larapida_app.1.$(docker service ps -f 'name=larapida_app.1' larapida_app -q --no-trunc | head -n1) python manage.py migrate
+          script: sh larapida-postinstall.sh
